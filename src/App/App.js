@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import './App.scss';
 
-const App = () => {
-
-};
+function App() {
+  return (
+    <div className="App">
+      <p>Internet Shop</p>
+    </div>
+  );
+}
 
 export default App;
