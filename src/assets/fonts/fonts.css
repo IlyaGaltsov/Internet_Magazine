@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Integral';
+  src:
+    local('Integral CF Bold'),
+    local('Integral-CF-Bold'),
+    url('./integral-cf/IntegralCF-Bold.woff2') format('woff2'),
+    url('./integral-cf/IntegralCF-Bold.woff') format('woff'),
+    url('./integral-cf/IntegralCF-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src:
+    url('./satoshi/Satoshi-Regular.woff2') format('woff2'),
+    url('./satoshi/Satoshi-Regular.woff') format('woff'),
+    url('./satoshi/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src:
+    url('./satoshi/Satoshi-Medium.woff2') format('woff2'),
+    url('./satoshi/Satoshi-Medium.woff') format('woff'),
+    url('./satoshi/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src:
+    url('./satoshi/Satoshi-Bold.woff2') format('woff2'),
+    url('./satoshi/Satoshi-Bold.woff') format('woff'),
+    url('./satoshi/Satoshi-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}

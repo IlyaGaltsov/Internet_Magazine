@@ -1,0 +1,36 @@
+.header {
+  padding: 24px 0;
+}
+
+.header_logo {
+  font-family: 'Integral';
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.header_row {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+}
+
+.header_nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_nav ul {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+}
+
+.header_nav a,
+.header_nav select {
+  font-size: 16px;
+  color: #000000;
+}
