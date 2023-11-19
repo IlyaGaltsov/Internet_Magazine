@@ -10,9 +10,6 @@ function Header() {
       <div className="container">
         <div className="header_row">
           <div className="header_logo">SHOP.CO</div>
-          {/* <Routes>
-          <Route path="/cart" />
-        </Routes> */}
           <nav className="header_nav">
             <div className="header_nav-main">
               <ul>
