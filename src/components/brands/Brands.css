@@ -1,0 +1,13 @@
+.brands {
+  background-color: black;
+  color: white;
+}
+
+.brands_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  padding: 44px 0;
+}

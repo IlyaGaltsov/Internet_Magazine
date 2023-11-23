@@ -1,10 +1,12 @@
 .promo {
   background-color: #f2f0f1;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .promo_content {
   display: flex;
-  column-gap: 20px;
 }
 
 .promo_title {
@@ -51,16 +53,9 @@
 }
 
 .promo_list-item:not(:last-child) {
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .promo_list-item p {
   font-size: 16px;
-}
-
-.promo_img {
-  display: flex;
-  align-items: flex-end;
-  height: 786px;
-  overflow: hidden;
 }

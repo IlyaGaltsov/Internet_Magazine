@@ -1,0 +1,36 @@
+.image-wrapper {
+  width: 280px;
+  height: 298px;
+  overflow: hidden;
+  background: #f0eeed;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.product_image {
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+
+.product:hover .product_image {
+  transform: scale(1.1);
+}
+
+.product_price .price {
+  margin-right: 5px;
+}
+
+.discounted {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.product_rating .full,
+.product_rating .half {
+  color: #ffc107;
+}
+
+.product_rating .empty {
+  color: #666;
+}
