@@ -3,7 +3,7 @@ import PromoImg from '../../assets/images/banners/banner1.png';
 
 function Promo() {
   return (
-    <section className="promo">
+    <section className="promo" style={{ backgroundImage: `url(${PromoImg})` }}>
       <div className="container">
         <div className="promo_content">
           <div className="promo_text">
@@ -33,9 +33,6 @@ function Promo() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="promo_img">
-            <img src={PromoImg} alt="Promo" />
           </div>
         </div>
       </div>
