@@ -11,6 +11,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
+          {/* new features */}
           <Route path="/" element={<MainPage />} />
         </Routes>
         <Footer />
