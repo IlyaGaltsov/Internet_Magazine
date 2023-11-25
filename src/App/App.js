@@ -4,6 +4,7 @@ import Footer from '../components/footer/Footer';
 import MainPage from '../pages/MainPage';
 
 import './App.scss';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/product" element={<ProductDetailsPage />} />
         </Routes>
         <Footer />
       </Router>
