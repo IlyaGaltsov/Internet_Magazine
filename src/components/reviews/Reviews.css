@@ -1,11 +1,11 @@
 .review {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .review_title {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 40px;
+  padding-bottom: 0;
   font-family: 'Integral';
   font-size: 48px;
 }
@@ -15,4 +15,11 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  justify-content: right;
 }

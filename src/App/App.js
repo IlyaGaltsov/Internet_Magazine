@@ -17,6 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/product/:id" element="" />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/casual" element={<CasualPage />} />
           <Route path="/party" element={<PartyPage />} />
