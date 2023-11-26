@@ -5,7 +5,7 @@
 .review_title {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   font-family: 'Integral';
   font-size: 48px;
 }

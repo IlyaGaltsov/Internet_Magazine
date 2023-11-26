@@ -41,9 +41,6 @@ function Reviews({ reviews }) {
               .map((review) => (
                 <ReviewItem review={review} key={review.id} />
               ))}
-            {/* {reviews.map((review) => ( */}
-            {/* <ReviewItem review={review} key={review.id} /> */}
-            {/* ))} */}
           </div>
         </div>
       </div>
