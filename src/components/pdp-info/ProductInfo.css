@@ -26,6 +26,11 @@
     width: 590px;
 }
 
+.price-info {
+    display: flex;
+    align-items: center;
+}
+
 .price-info span {
     margin-right: 12px;
     margin-bottom: 5px;

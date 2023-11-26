@@ -46,7 +46,7 @@ function ProductInfo() {
       <div className="product-info">
         <h2 className="product-title">{product.title}</h2>
         <Space className="product-rating">
-          <Rate allowHalf disable defaultValue={product.rating} /> {`${product.rating}/5`}
+          <Rate allowHalf disabled defaultValue={product.rating} /> {`${product.rating}/5`}
         </Space>
         {product.discountedPrice ? (
           <div className="price-info">

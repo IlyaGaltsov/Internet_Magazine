@@ -4,7 +4,7 @@ import './ProductImages.css';
 
 function ProductImages() {
   const [mainImage, setMainImage] = useState(productImages[0]);
-  const [activeThumbnailIndex, setActiveThumbnailIndex] = useState(false);
+  const [activeThumbnailIndex, setActiveThumbnailIndex] = useState(0);
   const handleThumbNailClick = (clickedItem, index) => {
     setMainImage(clickedItem);
     setActiveThumbnailIndex(index);
