@@ -16,7 +16,7 @@ function Footer() {
             </span>
             <div className="footer_social-icons">
               {socialIcons.map((icon) => (
-                <div className="icon-wrapper icon-wrapper-social">
+                <div className="icon-wrapper icon-wrapper-social" key={icon.id}>
                   <img src={icon.image} alt={icon.name} />
                 </div>
               ))}
@@ -24,11 +24,11 @@ function Footer() {
           </div>
 
           {footerItems.map((footerItem) => (
-            <div>
+            <div key={footerItem.id}>
               <h3 className="footer_item-title">{footerItem.title}</h3>
               <ul>
                 {footerItem.items.map((item) => (
-                  <li className="footer_item-link">
+                  <li className="footer_item-link" key={item.id}>
                     <Link to={item.link}>{item.name}</Link>
                   </li>
                 ))}
@@ -40,7 +40,7 @@ function Footer() {
           <span className="footer_bottom-title">Shop.co © 2000-2023, All Rights Reserved</span>
           <div className="footer_bottom-payments">
             {paymentsIcons.map((icon) => (
-              <div className="icon-wrapper icon-wrapper-payments">
+              <div className="icon-wrapper icon-wrapper-payments" key={icon.id}>
                 <img src={icon.image} alt={icon.name} />
               </div>
             ))}
