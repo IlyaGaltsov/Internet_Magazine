@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 import CartSvg from '../../assets/images/icons/cart.svg';
-import ProfileSvg from '../../assets/images/icons/profile.svg';
 import './Header.css';
 
 function Header() {
@@ -15,13 +14,6 @@ function Header() {
           <nav className="header_nav">
             <div className="header_nav-main">
               <ul>
-                <li>
-                  <select>
-                    <option value="">Shop</option>
-                    <option value="men">Men</option>
-                    <option value="women">Women</option>
-                  </select>
-                </li>
                 <li>
                   <Link to="/">On Sale</Link>
                 </li>
@@ -38,11 +30,6 @@ function Header() {
                 <li>
                   <Link to="/">
                     <img src={CartSvg} alt="Cart" />
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <img src={ProfileSvg} alt="Profile" />
                   </Link>
                 </li>
               </ul>

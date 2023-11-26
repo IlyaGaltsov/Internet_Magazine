@@ -13,6 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/product/:id" element="" />
           <Route path="/category" element={<CategoryPage />} />
         </Routes>
         <Footer />
