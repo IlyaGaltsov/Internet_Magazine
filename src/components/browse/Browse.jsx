@@ -8,14 +8,12 @@ function Browse() {
     <section className="browse">
       <div className="container">
         <div className="browse_content">
-          <div className="browse_title">
-            <h2>Browser by dress style</h2>
-          </div>
+          <h2 className="browse_title">Browser by dress style</h2>
           <div className="browse-img">
             {styleItems.map((styleItem) => (
-              <div className={styleItem.group}>
+              <div className={styleItem.group} key={styleItem.id}>
                 {styleItem.items.map((item) => (
-                  <Link to={item.link} className="browse-img_item">
+                  <Link to={item.link} className="browse-img_item" key={item.id}>
                     <h3 className="browse-img_title">{item.title}</h3>
                     <img src={item.image} alt={item.title} />
                   </Link>

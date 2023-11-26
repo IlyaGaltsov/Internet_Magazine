@@ -11,7 +11,7 @@ function Products({ title, products }) {
           <h2 className="products_title">{title}</h2>
           <div className="products_list">
             {products.map((product) => (
-              <ProductItem product={product} />
+              <ProductItem product={product} key={product.id} />
             ))}
           </div>
           <div className="view-all-button">
@@ -27,7 +27,9 @@ Products.propTypes = {
   title: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
       originalPrice: PropTypes.string,

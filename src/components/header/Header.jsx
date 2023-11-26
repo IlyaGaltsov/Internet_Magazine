@@ -9,7 +9,9 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="header_row">
-          <div className="header_logo">SHOP.CO</div>
+          <div className="header_logo">
+            <Link to="/">SHOP.CO</Link>
+          </div>
           <nav className="header_nav">
             <div className="header_nav-main">
               <ul>

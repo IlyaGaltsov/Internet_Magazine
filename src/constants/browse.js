@@ -5,17 +5,19 @@ import Gym from '../assets/images/browse/gym.png';
 
 export const styleItems = [
   {
+    id: 1,
     group: 'row1',
     items: [
-      { title: 'Casual', image: Casual, link: '/casual' },
-      { title: 'Formal', image: Formal, link: '/formal' },
+      { id: 1, title: 'Casual', image: Casual, link: '/casual' },
+      { id: 2, title: 'Formal', image: Formal, link: '/formal' },
     ],
   },
   {
+    id: 2,
     group: 'row2',
     items: [
-      { title: 'Party', image: Party, link: '/party' },
-      { title: 'Gym', image: Gym, link: '/gym' },
+      { id: 1, title: 'Party', image: Party, link: '/party' },
+      { id: 2, title: 'Gym', image: Gym, link: '/gym' },
     ],
   },
 ];
