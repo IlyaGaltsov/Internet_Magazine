@@ -17,6 +17,7 @@ function ProductSizes({ sizes, onSizeFunc }) {
         // eslint-disable-next-line react/no-array-index-key
         <input
           type="button"
+          /* eslint-disable-next-line react/no-array-index-key */
           key={index}
           value={size}
           onClick={() => {

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
+import ProductAddToCart from '../pdp-add-to-cart/ProductAddToCart';
 
 const product = {
   _id: '1',
@@ -29,14 +30,37 @@ const product = {
 const cartArr = [];
 
 function ProductInfo() {
-  // eslint-disable-next-line no-unused-vars
   const [color, setColor] = useState(product.colors[0]);
-  // eslint-disable-next-line no-unused-vars
   const [size, setSize] = useState(product.sizes[0]);
-  // eslint-disable-next-line no-unused-vars
   const [quantity, setQuantity] = useState(1);
-  // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useState(cartArr);
+
+  const handleAddToCart = () => {
+    const newItem = {
+      id: Date.now(),
+      itemTitle: product.title,
+      itemColor: color,
+      itemSize: size,
+      itemQuantity: quantity,
+    };
+
+    const existingItemIndex = cart.findIndex(
+      (item) =>
+        item.itemTitle === newItem.itemTitle &&
+        item.itemColor === newItem.itemColor &&
+        item.itemSize === newItem.itemSize,
+    );
+
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].itemQuantity += quantity;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, newItem]);
+    }
+
+    console.log('User cart', cart);
+  };
 
   // const handleColorClick = () => {
   //
@@ -76,6 +100,7 @@ function ProductInfo() {
       </div>
       <div className="product-quantity">
         <ProductQuantity onQuantityFunc={{ setQuantity, quantity }} />
+        <ProductAddToCart onAddToCartFunc={handleAddToCart} />
       </div>
     </div>
   );
