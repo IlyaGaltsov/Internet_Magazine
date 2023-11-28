@@ -6,7 +6,7 @@ import './Rating.css';
 function Rating({ rating }) {
   return (
     <div>
-      <Rate className="rating" allowHalf defaultValue={rating} /> {`${rating}/5`}
+      <Rate className="rating" allowHalf disabled defaultValue={rating} /> {`${rating}/5`}
     </div>
   );
 }
