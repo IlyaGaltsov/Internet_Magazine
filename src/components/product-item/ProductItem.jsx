@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Rating from '../rating/Rating';
 import './ProductItem.css';
 
 function ProductItem({ product }) {
   return (
-    <div key={product.name} className="product">
+    <Link to={`/product/${product.id}`} key={product.name} className="product">
       <div className="image-wrapper">
         <img src={product.img} alt={product.name} className="product_image" />
       </div>
       <h3 className="product_name">{product.name}</h3>
-      <Rating rating={product.rating} productName={product.name} />
+      <Rating rating={product.rating} />
       <div className="product_price">
         {product.originalPrice ? (
           <>
@@ -20,7 +21,7 @@ function ProductItem({ product }) {
           <span className="price">{product.price}</span>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
 

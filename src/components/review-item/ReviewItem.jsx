@@ -7,7 +7,7 @@ import './ReviewItem.css';
 function ReviewItem({ review }) {
   return (
     <div className="review_item">
-      <Rating rating={review.rating} productName={review.name} />
+      <Rating rating={review.rating} />
       <div className="review_item-name">
         <span>{review.name}</span>
         <img src={Check} alt={review.name} />
