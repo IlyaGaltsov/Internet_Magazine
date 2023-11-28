@@ -5,10 +5,12 @@ import MainPage from '../pages/MainPage';
 import CategoryPage from '../pages/CategoryPage';
 
 import './App.scss';
+
 import CasualPage from '../pages/CasualPage';
 import PartyPage from '../pages/PartyPage';
 import GymPage from '../pages/GymPage';
 import FormalPage from '../pages/FormalPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/product/:id" element="" />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/casual" element={<CasualPage />} />
           <Route path="/party" element={<PartyPage />} />

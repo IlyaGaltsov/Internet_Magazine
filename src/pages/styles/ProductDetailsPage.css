@@ -1,0 +1,6 @@
+.product-details {
+    display: flex;
+    gap: 40px;
+    max-width: 1250px;
+    margin: auto;
+}

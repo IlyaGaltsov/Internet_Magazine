@@ -1,0 +1,93 @@
+.product-info {
+    max-width: 600px;
+    border-bottom: 1px rgba(0, 0, 0, 0.10) solid;
+    padding-bottom: 24px;
+}
+
+.product-title {
+    color: #000;
+    font-family: Integral;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    color: rgba(0, 0, 0, 0.60);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    width: 590px;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+}
+
+.price-info span {
+    margin-right: 12px;
+    margin-bottom: 5px;
+}
+
+.discounted-price {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.original-price {
+    color: rgba(0, 0, 0, 0.30);
+    font-family: Satoshi;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: line-through;
+}
+
+.discount-percentages {
+    border-radius: 62px;
+    background: rgba(255, 51, 51, 0.10);
+    display: inline-flex;
+    padding: 6px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    color: #F33;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.product-color {
+    max-width: 600px;
+    border-bottom: 1px rgba(0, 0, 0, 0.10) solid;
+    padding: 24px 0;
+}
+
+.product-size {
+    max-width: 600px;
+    border-bottom: 1px rgba(0, 0, 0, 0.10) solid;
+    padding: 24px 0;
+}
+
+.product-quantity {
+    max-width: 600px;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

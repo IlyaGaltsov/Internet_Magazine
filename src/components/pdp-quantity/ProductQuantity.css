@@ -1,0 +1,11 @@
+.quantity-adjuster {
+    display: flex;
+    width: 170px;
+    height: 52px;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 62px;
+    background: #F0F0F0;
+}
