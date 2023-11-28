@@ -14,11 +14,12 @@ function ProductItem({ product }) {
       <div className="product_price">
         {product.originalPrice ? (
           <>
-            <span className="price">{product.price}</span>
-            <span className="price discounted">{product.originalPrice}</span>
+            <span className="price">${product.price}</span>
+            <span className="price discounted">${product.originalPrice}</span>
+            <span className="discount">-{product.discount}%</span>
           </>
         ) : (
-          <span className="price">{product.price}</span>
+          <span className="price">${product.price}</span>
         )}
       </div>
     </Link>
@@ -31,8 +32,9 @@ ProductItem.propTypes = {
     name: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    originalPrice: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    originalPrice: PropTypes.number,
+    discount: PropTypes.number,
     rating: PropTypes.number.isRequired,
   }).isRequired,
 };
