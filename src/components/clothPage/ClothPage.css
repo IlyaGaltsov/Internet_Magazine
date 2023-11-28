@@ -1,0 +1,56 @@
+.cloth_heder{
+    display: flex;
+}
+.cloth_heder h3{
+    font-size: 27px;
+    font-weight: 800;
+}
+.section_filter{
+    margin: 0 0 0 428px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.section_filter p{
+    font-size: 16px;
+    color: grey;
+}
+select[name="section_tab"]{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0; /* Убираем внутренние отступы, если они есть */
+}
+select[name="section_tab"] option {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0; /* Убираем внутренние отступы, если они есть */
+}
+.cloth_item{
+    width: 945px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cloth_card{
+    margin: 0 20px 36px 0;
+}
+.cloth_card p{
+    font-size: 18px;
+    font-weight: 800;
+}
+.cloth_card p:last-child{
+    font-size: 20px;
+    font-weight: 800;
+}
+.raiting{
+    display: flex;
+    margin: 0 0 12px 0;
+}
+.raiting img{
+    margin: 6px 0 0 0 ;
+    width: 20px;
+    height: 20px;
+    padding: 0 0 0 2px;
+}
+.raiting p{
+    padding: 5px 0 0 15px;
+}
