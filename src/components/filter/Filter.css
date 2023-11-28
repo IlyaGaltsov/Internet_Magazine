@@ -1,0 +1,42 @@
+.filter_conainer{
+    margin: 0 25px;
+}
+.filter{
+    width: 300px;
+}
+.title h2{
+    font-size: 27px;
+    font-weight: 800;
+}
+.menu_filter{
+    display: flex;
+    gap: 160px;
+}
+.title{
+    margin-right: 158px;
+}
+.menu_filter img{
+    width: 24px;
+    height: 24px;
+}
+.Tabs {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.tab p {
+    margin-right: 20px;
+    font-size: 18px; /* Помещаем текст влево, оставляя место справа для изображения */
+}
+
+.tab img {
+    margin-left: 150px; /* Отодвигаем изображение вправо на 180px */
+}

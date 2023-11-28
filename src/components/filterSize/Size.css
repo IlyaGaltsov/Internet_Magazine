@@ -1,0 +1,31 @@
+.size_container{
+    margin: 50px 0 0 0;
+    width: 300px;
+}
+.title_size{
+    display: flex;
+    gap: 210px;
+}
+.title_size p{
+    font-size: 27px;
+    font-weight: 800;
+}
+.title_size img{
+    width: 16px;
+    height: 16px;
+}
+.chart_menu{
+    width: 250px;
+    flex-wrap: wrap;
+    display: flex;
+}
+.chart_menu li{
+    font-size: 20px;
+    padding: 20px;
+}
+.chart_menu li:hover{
+    background-color: black;
+    color: white;
+    border-radius: 20%;
+    padding: 20px;
+}

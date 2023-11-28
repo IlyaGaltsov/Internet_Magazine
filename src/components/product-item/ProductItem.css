@@ -1,11 +1,12 @@
 .image-wrapper {
-  width: 280px;
-  height: 298px;
+  width: 240px;
+  height: 260px;
   overflow: hidden;
   background: #f0eeed;
   border-radius: 20px;
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .product_image {
@@ -17,20 +18,23 @@
   transform: scale(1.1);
 }
 
+.product_name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product .rating {
+  margin-bottom: 8px;
+}
+
 .product_price .price {
   margin-right: 5px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .discounted {
   text-decoration: line-through;
   color: #999;
-}
-
-.product_rating .full,
-.product_rating .half {
-  color: #ffc107;
-}
-
-.product_rating .empty {
-  color: #666;
 }

@@ -1,0 +1,25 @@
+.review {
+  margin-bottom: 40px;
+}
+
+.review_title {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0;
+  font-family: 'Integral';
+  font-size: 48px;
+}
+
+.review_list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  justify-content: right;
+}
