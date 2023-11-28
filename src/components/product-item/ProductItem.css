@@ -1,3 +1,7 @@
+.product {
+  color: initial;
+}
+
 .image-wrapper {
   width: 240px;
   height: 260px;
@@ -28,8 +32,13 @@
   margin-bottom: 8px;
 }
 
+.product_price {
+  display: flex;
+  align-items: center;
+}
+
 .product_price .price {
-  margin-right: 5px;
+  margin-right: 10px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -37,4 +46,12 @@
 .discounted {
   text-decoration: line-through;
   color: #999;
+}
+
+.discount {
+  padding: 6px 13.5px;
+  border-radius: 62px;
+  color: #ff3333;
+  font-size: 12px;
+  background-color: rgba(255, 51, 51, 0.1);
 }
