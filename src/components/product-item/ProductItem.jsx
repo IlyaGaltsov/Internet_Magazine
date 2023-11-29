@@ -1,15 +1,15 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import Rating from '../rating/Rating';
 import './ProductItem.css';
 
 function ProductItem({ product }) {
   return (
-    <Link to={`/product/${product.id}`} key={product.name} className="product">
+    <Link to={`/product/${product.id}`} key={product.title} className="product">
       <div className="image-wrapper">
-        <img src={product.img} alt={product.name} className="product_image" />
+        <img src={product.thumb} alt={product.title} className="product_image" />
       </div>
-      <h3 className="product_name">{product.name}</h3>
+      <h3 className="product_name">{product.title}</h3>
       <Rating rating={product.rating} />
       <div className="product_price">
         {product.originalPrice ? (
@@ -29,13 +29,18 @@ function ProductItem({ product }) {
 ProductItem.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    thumb: PropTypes.string,
     price: PropTypes.number.isRequired,
     originalPrice: PropTypes.number,
     discount: PropTypes.number,
     rating: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string),
+    colors: PropTypes.arrayOf(PropTypes.string),
+    sizes: PropTypes.arrayOf(PropTypes.string),
+    count: PropTypes.number,
+    isNew: PropTypes.bool,
   }).isRequired,
 };
 
