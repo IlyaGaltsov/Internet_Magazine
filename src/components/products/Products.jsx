@@ -28,13 +28,18 @@ Products.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      thumb: PropTypes.string,
       price: PropTypes.number.isRequired,
       originalPrice: PropTypes.number,
       discount: PropTypes.number,
       rating: PropTypes.number.isRequired,
+      images: PropTypes.arrayOf(PropTypes.string),
+      colors: PropTypes.arrayOf(PropTypes.string),
+      sizes: PropTypes.arrayOf(PropTypes.string),
+      count: PropTypes.number,
+      isNew: PropTypes.bool,
     }),
   ).isRequired,
 };
