@@ -21,6 +21,7 @@ p {
     font-weight: 400;
     line-height: normal;
     margin-right: 12px;
+    cursor: pointer;
 }
 
 .size-btn.active {

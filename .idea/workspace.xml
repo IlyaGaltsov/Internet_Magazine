@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a36af282-d318-4a32-a3e9-e6f47349d9c3" name="Changes" comment="" />
+    <list default="true" id="a36af282-d318-4a32-a3e9-e6f47349d9c3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pdp-colors/ProductColors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pdp-colors/ProductColors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pdp-images/ProductImages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pdp-images/ProductImages.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pdp-info/ProductInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pdp-info/ProductInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetailsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetailsPage.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -26,6 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "product-page-part-2",
     "last_opened_file_path": "/Users/ivan.kovtun/GitHub/Internet_Magazine",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -33,6 +46,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/ivan.kovtun/GitHub/Internet_Magazine/node_modules/prettier",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,6 +60,7 @@
       <updated>1700557176572</updated>
       <workItem from="1700557178125" duration="889000" />
       <workItem from="1700854221736" duration="3310000" />
+      <workItem from="1701465472446" duration="4616000" />
     </task>
     <servers />
   </component>

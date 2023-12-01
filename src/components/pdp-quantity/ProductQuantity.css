@@ -9,3 +9,7 @@
     border-radius: 62px;
     background: #F0F0F0;
 }
+
+.quantity-adjuster div {
+    cursor: pointer;
+}

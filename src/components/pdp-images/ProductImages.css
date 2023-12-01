@@ -6,6 +6,7 @@
     width: 152px;
     height: 167px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .thumbnail.active {
