@@ -4,7 +4,7 @@ import Filter from '../components/filter/Filter';
 import Colors from '../components/filterColors/Colors';
 import Size from '../components/filterSize/Size';
 import ClothPage from '../components/clothPage/ClothPage';
-import './ClothPage.css';
+import './styles/ClothPage.css';
 
 function CasualPage() {
   return (

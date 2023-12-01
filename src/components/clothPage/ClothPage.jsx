@@ -1,13 +1,34 @@
 import './ClothPage.css';
+import { useLocation } from 'react-router-dom';
 import item from './image 10.png';
 import star from './Star 1.png';
 
 function ClothPage() {
+  const location = useLocation();
+  let sectionTitle;
+
+  switch (location.pathname) {
+    case '/casual':
+      sectionTitle = 'Casual';
+      break;
+    case '/gym':
+      sectionTitle = 'Gym';
+      break;
+    case '/formal':
+      sectionTitle = 'Formal';
+      break;
+    case '/party':
+      sectionTitle = 'Party';
+      break;
+    default:
+      sectionTitle = 'Sorry';
+  }
+
   return (
     <div className="cloth_page">
       <div className="cloth_block">
         <div className="cloth_heder">
-          <h3>Casual</h3>
+          <h3>{sectionTitle}</h3>
           <div className="section_filter">
             <p>Showing 1-10 of 100 Products</p>
             <p>Sort by:</p>

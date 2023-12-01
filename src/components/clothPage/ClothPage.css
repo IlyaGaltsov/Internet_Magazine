@@ -18,7 +18,7 @@
 select[name="section_tab"]{
     font-size: 14px;
     font-weight: bold;
-    margin: 0; /* Убираем внутренние отступы, если они есть */
+    margin: 0 0 10px 0; /* Убираем внутренние отступы, если они есть */
 }
 select[name="section_tab"] option {
     font-size: 14px;
