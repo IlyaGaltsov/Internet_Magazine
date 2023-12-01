@@ -15,17 +15,16 @@
     width: 300px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Пространство между кнопками */
+    gap: 10px; 
 }
 
-input[type="button"] {
-    flex: 0 0 calc(20% - 10px); /* 20% ширины каждой кнопки, вычитаем пространство между ними */
+.color_btn{
+    flex: 0 0 calc(20% - 10px); 
     height: 37px;
     border-radius: 60%;
     padding: 0;
 }
 
-/* Ваши цвета */
 input.green { background-color: #00C12B; }
 input.red { background-color: red; }
 input.yellow { background-color: yellow; }
