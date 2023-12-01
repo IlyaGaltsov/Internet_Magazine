@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import Search from '../search/Search';
 import CartSvg from '../../assets/images/icons/cart.svg';
 import './Header.css';
 
@@ -25,6 +25,7 @@ function Header() {
                 </li>
               </ul>
             </div>
+            <Search />
             <div className="header_nav-profile">
               <ul>
                 <li>

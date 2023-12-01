@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { socialIcons, footerItems, paymentsIcons } from '../../constants/footer';
+import Subscribe from '../subscribe/Subscribe';
 
 import './Footer.css';
 
@@ -7,6 +8,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
+        <Subscribe />
         <div className="footer_container ">
           <div>
             <h2 className="footer_title">Shop.co</h2>
