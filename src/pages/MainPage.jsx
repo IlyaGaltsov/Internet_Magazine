@@ -5,6 +5,8 @@ import Browse from '../components/browse/Browse';
 import Reviews from '../components/reviews/Reviews';
 import { products } from '../data/products';
 import { reviews } from '../data/reviews';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -17,6 +19,12 @@ function shuffleArray(array) {
 function MainPage() {
   const arrivalsProducts = products.filter((product) => product.isNew);
   const productsTopSelling = shuffleArray([...products]).slice(0, 4);
+  // const dispatch = useDispatch();
+  // const keyword = match.params.keyword;
+
+  // useEffect(() => {
+  //   dispatch(getProducts(keyword, MainPage));
+  // });
 
   return (
     <div>
