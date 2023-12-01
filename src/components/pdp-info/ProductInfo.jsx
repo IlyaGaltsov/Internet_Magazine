@@ -1,44 +1,25 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Rate, Space } from 'antd';
 import './ProductInfo.css';
+import { shape } from 'prop-types';
 import { useState } from 'react';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
 import ProductAddToCart from '../pdp-add-to-cart/ProductAddToCart';
 
-const product = {
-  _id: '1',
-  title: 'One Life Graphic T-shirt',
-  src: [
-    'https://www.upsieutoc.com/images/2020/06/27/img1.jpg',
-    'https://www.upsieutoc.com/images/2020/06/27/img2.jpg',
-    'https://www.upsieutoc.com/images/2020/06/27/img3.jpg',
-    'https://www.upsieutoc.com/images/2020/06/27/img4.jpg',
-  ],
-  description:
-    'This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.',
-  rating: 4.5,
-  originalPrice: 300,
-  discountedPrice: 260,
-  // "sale": true,
-  colors: ['#4F4631', '#314F4A', '#31344F'],
-  sizes: ['Small', 'Medium', 'Large', 'X-Large'],
-  count: 1,
-};
-
 const cartArr = [];
 
-function ProductInfo() {
-  const [color, setColor] = useState(product.colors[0]);
-  const [size, setSize] = useState(product.sizes[0]);
+function ProductInfo({ productData }) {
+  const [color, setColor] = useState(productData.colors[0]);
+  const [size, setSize] = useState(productData.sizes[0]);
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(cartArr);
 
   const handleAddToCart = () => {
     const newItem = {
       id: Date.now(),
-      itemTitle: product.title,
+      itemTitle: productData.title,
       itemColor: color,
       itemSize: size,
       itemQuantity: quantity,
@@ -68,18 +49,18 @@ function ProductInfo() {
   return (
     <div>
       <div className="product-info">
-        <h2 className="product-title">{product.title}</h2>
+        <h2 className="product-title">{productData.title}</h2>
         <Space className="product-rating">
-          <Rate allowHalf disabled defaultValue={product.rating} /> {`${product.rating}/5`}
+          <Rate allowHalf disabled defaultValue={productData.rating} /> {`${productData.rating}/5`}
         </Space>
-        {product.discountedPrice ? (
+        {productData.discountedPrice ? (
           <div className="price-info">
-            <span className="discounted-price">${product.discountedPrice}</span>
-            <span className="original-price">${product.originalPrice}</span>
+            <span className="discounted-price">${productData.discountedPrice}</span>
+            <span className="original-price">${productData.price}</span>
             <span className="discount-percentages">
               -
               {(
-                ((product.originalPrice - product.discountedPrice) / product.originalPrice) *
+                ((productData.price - productData.discountedPrice) / productData.price) *
                 100
               ).toFixed(0)}
               %
@@ -87,16 +68,16 @@ function ProductInfo() {
           </div>
         ) : (
           <div>
-            <span>Price: ${product.originalPrice}</span>
+            <span className="discounted-price">${productData.price}</span>
           </div>
         )}
-        <p className="product-description">{product.description}</p>
+        <p className="product-description">{productData.description}</p>
       </div>
       <div className="product-color">
-        <ProductColors colors={product.colors} onColorFunc={setColor} />
+        <ProductColors colors={productData.colors} onColorFunc={setColor} />
       </div>
       <div className="product-size">
-        <ProductSizes sizes={product.sizes} onSizeFunc={setSize} />
+        <ProductSizes sizes={productData.sizes} onSizeFunc={setSize} />
       </div>
       <div className="product-quantity">
         <ProductQuantity onQuantityFunc={{ setQuantity, quantity }} />
@@ -105,5 +86,9 @@ function ProductInfo() {
     </div>
   );
 }
+
+ProductInfo.propTypes = {
+  productData: shape().isRequired,
+};
 
 export default ProductInfo;

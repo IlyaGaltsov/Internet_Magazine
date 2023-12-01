@@ -7,6 +7,10 @@ import Product6 from '../assets/images/products/6.png';
 import Product7 from '../assets/images/products/7.png';
 import Product8 from '../assets/images/products/8.png';
 
+import Product91 from '../assets/images/pdp-images/image1.png';
+import Product92 from '../assets/images/pdp-images/image5.png';
+import Product93 from '../assets/images/pdp-images/image6.png';
+
 export const products = [
   {
     id: 1,
@@ -102,21 +106,49 @@ export const products = [
     price: 80,
     rating: 3,
     images: [''],
-    colors: [''],
-    sizes: [''],
+    colors: ['orange', 'purple'],
+    sizes: ['Small', 'Large', 'X-Large'],
     count: 1,
   },
+  // {
+  //   id: 8,
+  //   title: 'Faded Skinny Jeans',
+  //   description: 'Test text for faded skinny jeans',
+  //   thumb: Product8,
+  //   url: '#',
+  //   price: 210,
+  //   rating: 4,
+  //   images: [''],
+  //   colors: [''],
+  //   sizes: [''],
+  //   count: 1,
+  // },
   {
     id: 8,
     title: 'Faded Skinny Jeans',
-    description: '',
+    description: 'Test text for faded skinny jeans',
     thumb: Product8,
     url: '#',
-    price: 210,
+    price: 200,
+    discountedPrice: 0,
     rating: 4,
-    images: [''],
-    colors: [''],
-    sizes: [''],
+    images: [Product8, Product92, Product93],
+    colors: ['black', 'brown', 'yellow'],
+    sizes: ['S', 'M', 'L'],
+    count: 1,
+  },
+  {
+    id: 9,
+    title: 'One Life Graphic T-shirt',
+    description:
+      'This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.',
+    thumb: Product91,
+    price: 300,
+    discountedPrice: 260,
+    rating: 4.5,
+    images: [Product91, Product92, Product93],
+    colors: ['#4F4631', '#314F4A', '#31344F'],
+    sizes: ['Small', 'Medium', 'Large', 'X-Large'],
     count: 1,
   },
 ];
