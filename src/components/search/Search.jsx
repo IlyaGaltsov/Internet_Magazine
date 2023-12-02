@@ -5,7 +5,7 @@ import './Search.css';
 
 function Search() {
   const [products, setProducts] = useState([]);
-  const [inputValue, setInputValue] = useState(''); // Додавання стану для управління вмістом поля вводу
+  const [inputValue, setInputValue] = useState('');
   const [showResults, setShowResults] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -29,7 +29,7 @@ function Search() {
 
   const handleResultSelect = () => {
     setShowResults(false);
-    setInputValue(''); // Очищення поля вводу при виборі результату
+    setInputValue('');
   };
 
   return (
