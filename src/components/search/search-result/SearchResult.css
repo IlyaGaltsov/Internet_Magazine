@@ -1,0 +1,22 @@
+.search_result {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.search_result-item {
+  padding: 5px;
+}
+
+.search_result-item:hover {
+  background-color: #efefef;
+}

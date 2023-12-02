@@ -1,0 +1,16 @@
+.search_form {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 62px;
+  padding: 12px 20px;
+  width: 577px;
+}
+
+.search_form .form_control {
+  width: 100%;
+}
+
+.search_icon {
+  margin-right: 12px;
+}
