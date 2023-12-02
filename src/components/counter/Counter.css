@@ -1,0 +1,14 @@
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 126px;
+    height: 44px;
+    padding: 16px 20px;
+    border-radius: 62px;
+    background: #F0F0F0;
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+}
+  

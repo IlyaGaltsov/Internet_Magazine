@@ -11,6 +11,7 @@ import PartyPage from '../pages/PartyPage';
 import GymPage from '../pages/GymPage';
 import FormalPage from '../pages/FormalPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
+import CartPage from '../pages/CartPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/party" element={<PartyPage />} />
           <Route path="/gym" element={<GymPage />} />
           <Route path="/formal" element={<FormalPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
         <Footer />
       </Router>
