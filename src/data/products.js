@@ -126,7 +126,8 @@ export const products = [
   {
     id: 8,
     title: 'Faded Skinny Jeans',
-    description: 'Test text for faded skinny jeans',
+    description:
+      'This fluid V-neck blouse will skim and float over your body. Elegant and tailored with the ease of a tee, it was constructed with comfortable stretch from an extra special, washable crepe de chine. We love the soft volume that flows down from the pleats at the neck and the elegant trim finishes.',
     thumb: Product8,
     url: '#',
     price: 200,
