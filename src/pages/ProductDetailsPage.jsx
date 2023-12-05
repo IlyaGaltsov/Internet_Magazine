@@ -15,7 +15,7 @@ function ProductDetailsPage() {
         <ProductImages productImages={product.images} />
         <ProductInfo productData={product} />
       </div>
-      <ProductTabs />
+      <ProductTabs productData={product} />
     </div>
   );
 }

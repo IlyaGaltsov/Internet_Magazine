@@ -137,6 +137,48 @@ export const products = [
     colors: ['black', 'brown', 'yellow'],
     sizes: ['S', 'M', 'L'],
     count: 1,
+    reviews: [
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+    ],
   },
   {
     id: 9,
@@ -151,5 +193,47 @@ export const products = [
     colors: ['#4F4631', '#314F4A', '#31344F'],
     sizes: ['Small', 'Medium', 'Large', 'X-Large'],
     count: 1,
+    reviews: [
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+    ],
   },
 ];

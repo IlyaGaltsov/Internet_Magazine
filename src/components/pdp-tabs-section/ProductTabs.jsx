@@ -1,55 +1,13 @@
 import { useState } from 'react';
 import { Rate, Space } from 'antd';
+import { shape } from 'prop-types';
 import ReviewModal from '../pdp-review-modal/ReviewModal';
 import Check from '../../assets/images/icons/check.svg';
 import './ProductTabs.css';
 
-const reviewsArr = [
-  {
-    id: 1,
-    name: 'QA Test',
-    rating: 3.5,
-    review:
-      '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
-    date: 'August 14 2023',
-  },
-  {
-    id: 1,
-    name: 'QA Test',
-    rating: 3.5,
-    review:
-      '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
-    date: 'August 14 2023',
-  },
-  {
-    id: 1,
-    name: 'QA Test',
-    rating: 3.5,
-    review:
-      '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
-    date: 'August 14 2023',
-  },
-  {
-    id: 1,
-    name: 'QA Test',
-    rating: 3.5,
-    review:
-      '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
-    date: 'August 14 2023',
-  },
-  {
-    id: 1,
-    name: 'QA Test',
-    rating: 3.5,
-    review:
-      '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
-    date: 'August 14 2023',
-  },
-];
-
-function ProductTabs() {
+function ProductTabs({ productData }) {
   const [activeTab, setActiveTab] = useState('reviews');
-  const [reviews, setReviews] = useState(reviewsArr);
+  const [reviews, setReviews] = useState(productData.reviews);
   const [showModal, setShowModal] = useState(false);
 
   const handleTabClick = (selectedTab) => {
@@ -102,7 +60,7 @@ function ProductTabs() {
             <div className="details-header">
               <h3>Product Details</h3>
             </div>
-            <p>Short description</p>
+            <p>{productData.description}</p>
           </div>
         )}
 
@@ -143,5 +101,9 @@ function ProductTabs() {
     </div>
   );
 }
+
+ProductTabs.propTypes = {
+  productData: shape().isRequired,
+};
 
 export default ProductTabs;
