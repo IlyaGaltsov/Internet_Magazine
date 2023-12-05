@@ -1,12 +1,29 @@
 import { useState } from 'react';
 import { func } from 'prop-types';
+import './ReviewModal.css';
+import { Rate, Space } from 'antd';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useFormik } from 'formik';
+import { reviewModalScheme } from './ReviewModalScheme';
 
 function ReviewModal({ onSubmit, onClose }) {
-  const [name, setName] = useState('');
-  const [review, setReview] = useState('');
-  const [rating, setRating] = useState('');
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      review: '',
+    },
+    validationSchema: reviewModalScheme,
+    // eslint-disable-next-line no-use-before-define
+    onSubmit: () => handleReviewSubmit(),
+  });
+  const { name, review } = formik.values;
 
-  const handleSubmit = () => {
+  // const [name, setName] = useState('');
+  // const [review, setReview] = useState('');
+  const [rating, setRating] = useState('');
+  const [error, setError] = useState(false);
+
+  function handleReviewSubmit() {
     const newReview = {
       id: Date.now(),
       name,
@@ -14,31 +31,51 @@ function ReviewModal({ onSubmit, onClose }) {
       rating,
       date: new Date().toLocaleDateString(),
     };
-    onSubmit(newReview);
-  };
+
+    if (rating > 0) {
+      onSubmit(newReview);
+    } else {
+      setError(true);
+    } // TODO need to think of better solution for required rating
+  }
 
   return (
     <div className="modal">
       <div className="modal-content">
         <h2>Write a Review</h2>
+        <Space className="modal-rating">
+          <Rate
+            allowHalf
+            onChange={(value) => {
+              setRating(value);
+            }}
+          />
+        </Space>
+        {error && <div className="review-error">Select rating</div>}
+
         <label htmlFor="name">
           Name:
-          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <input name="name" id="name" type="text" value={name} onChange={formik.handleChange} />
+          {formik.errors.name && <div className="review-error">{formik.errors.name}</div>}
         </label>
+
         <label htmlFor="review">
           Review:
-          <textarea id="review" value={review} onChange={(e) => setReview(e.target.value)} />
+          <textarea name="review" id="review" value={review} onChange={formik.handleChange} />
+          {formik.errors.review && <div className="review-error">{formik.errors.review}</div>}
         </label>
-        <label htmlFor="rating">
-          Rating:
-          <input
-            id="rating"
-            type="number"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          />
-        </label>
-        <button type="button" onClick={handleSubmit}>
+
+        {/* <label htmlFor="name"> */}
+        {/*  Name: */}
+        {/*  <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} /> */}
+        {/* </label> */}
+
+        {/* <label htmlFor="review"> */}
+        {/*  Review: */}
+        {/*  <textarea id="review" value={review} onChange={(e) => setReview(e.target.value)} /> */}
+        {/* </label> */}
+
+        <button type="button" onClick={formik.handleSubmit}>
           Submit
         </button>
         <button type="button" onClick={onClose}>

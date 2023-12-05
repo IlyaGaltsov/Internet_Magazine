@@ -125,6 +125,10 @@
     margin: 19px 0 16px;
 }
 
+.review-card-name span {
+    margin-right: 6px;
+}
+
 .review-card-text {
     color: rgba(0, 0, 0, 0.60);
     font-family: Satoshi;

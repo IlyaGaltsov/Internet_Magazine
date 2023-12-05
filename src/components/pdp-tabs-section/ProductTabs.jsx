@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Rate, Space } from 'antd';
 import ReviewModal from '../pdp-review-modal/ReviewModal';
+import Check from '../../assets/images/icons/check.svg';
 import './ProductTabs.css';
 
 const reviewsArr = [
@@ -122,7 +123,10 @@ function ProductTabs() {
                   <Space className="product-rating">
                     <Rate allowHalf disabled defaultValue={review.rating} />
                   </Space>
-                  <p className="review-card-name">{review.name}</p>
+                  <div className="review-card-name">
+                    <span>{review.name}</span>
+                    <img src={Check} alt={review.name} />
+                  </div>
                   <p className="review-card-text">{review.review}</p>
                   <p className="review-card-date">
                     Posted on {new Date(review.date).toLocaleDateString()}
