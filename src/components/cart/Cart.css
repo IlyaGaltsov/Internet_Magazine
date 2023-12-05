@@ -1,0 +1,8 @@
+.cart-container {
+    display: flex;
+    
+}
+
+.products-container {
+    flex: 1 1 60%;
+}
