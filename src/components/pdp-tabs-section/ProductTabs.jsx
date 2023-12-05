@@ -75,6 +75,12 @@ function ProductTabs({ productData }) {
               </button>
             </div>
             <div className="reviews-list">
+              {!reviews.length && (
+                <div className="no-reviews">
+                  <p>No reviews for the product yet...</p>
+                  <p>Be the first to leave a review!</p>
+                </div>
+              )}
               {reviews.map((review, index) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <div key={index} className="review-card">

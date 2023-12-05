@@ -101,6 +101,20 @@
     line-height: normal;
 }
 
+.no-reviews {
+    margin: auto;
+    text-align: center;
+}
+
+.no-reviews p{
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: black;
+}
+
 .reviews-list {
     display: flex;
     /*flex-direction: column;*/
