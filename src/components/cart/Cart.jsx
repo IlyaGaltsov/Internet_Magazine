@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import CartTitle from '../cartTitle/CartTitle';
 import CartItem from '../cartItem/CartItem';
+import OrderSummary from '../orderSummary/OrderSummary';
+
+import './Cart.css';
 
 import cartImg1 from '../../assets/images/cart-images/cart_img1.png';
 import cartImg2 from '../../assets/images/cart-images/cart_img2.png';
@@ -52,21 +55,24 @@ function Cart() {
   return (
     <div>
       <CartTitle />
-      <div className="products-container">
-        {products.map((product) => (
-          <CartItem
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            image={product.image}
-            size={product.size}
-            color={product.color}
-            price={product.price}
-            quantity={product.quantity}
-            onQuantityChange={handleQuantityChange}
-            onDelete={handleDelete}
-          />
-        ))}
+      <div className="cart-container">
+        <div className="products-container">
+          {products.map((product) => (
+            <CartItem
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              image={product.image}
+              size={product.size}
+              color={product.color}
+              price={product.price}
+              quantity={product.quantity}
+              onQuantityChange={handleQuantityChange}
+              onDelete={handleDelete}
+            />
+          ))}
+        </div>
+        <OrderSummary products={products} />
       </div>
     </div>
   );
