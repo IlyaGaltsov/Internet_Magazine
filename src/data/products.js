@@ -121,7 +121,8 @@ export const products = [
   {
     id: 8,
     title: 'Faded Skinny Jeans',
-    description: 'Test text for faded skinny jeans',
+    description:
+      'This fluid V-neck blouse will skim and float over your body. Elegant and tailored with the ease of a tee, it was constructed with comfortable stretch from an extra special, washable crepe de chine. We love the soft volume that flows down from the pleats at the neck and the elegant trim finishes.',
     thumb: Product8,
     url: '#',
     price: 200,
@@ -132,6 +133,48 @@ export const products = [
     colors: ['black', 'brown', 'yellow'],
     sizes: ['S', 'M', 'L'],
     count: 1,
+    reviews: [
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+    ],
   },
   {
     id: 9,
@@ -147,5 +190,47 @@ export const products = [
     colors: ['#4F4631', '#314F4A', '#31344F'],
     sizes: ['Small', 'Medium', 'Large', 'X-Large'],
     count: 1,
+    reviews: [
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+      {
+        id: 1,
+        name: 'QA Test',
+        rating: 3.5,
+        review:
+          '"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It\'s become my favorite go-to shirt."',
+        date: 'August 14 2023',
+      },
+    ],
   },
 ];
