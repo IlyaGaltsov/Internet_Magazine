@@ -1,0 +1,109 @@
+.order-summary-container {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    max-width: 505px;
+    height: 458px;
+}
+
+.order-summary-container h2 {
+    font-family: 'Satoshi';
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+  
+.order-summary-details {
+    margin-bottom: 20px;
+}
+
+.order-summary-details p {
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 500;
+}
+  
+.order-summary-details div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.order-summary-details div .discount-applied {
+    color: #ff3333;
+}
+
+.order-summary-details .price-bold {
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-summary-details .total-bold {
+    font-family: 'Satoshi';
+    font-size: 24px;
+    font-weight: 700;
+}
+  
+.total {
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+  
+.promo-code {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.promo-code-input-container {
+    position: relative;
+}
+  
+.promo-code input {
+    margin-right: 10px;
+    padding: 10px 10px 10px 40px;
+    width: 326px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 62px;
+    background: #F0F0F0;
+}
+
+.promo-code-icon {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.promo-code button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 62px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 119px;
+    height: 48px;
+    margin-bottom: 23px;
+}
+  
+.go-to-checkout-button {
+    width: 457px;
+    height: 60px;
+    padding: 16px 54px;
+    border-radius: 62px;
+    background: #000;
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}

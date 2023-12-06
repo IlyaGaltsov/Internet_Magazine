@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { productImages } from '../../constants/pdp';
+// import { productImages } from '../../constants/pdp';
+import { arrayOf, string } from 'prop-types';
 import './ProductImages.css';
 
-function ProductImages() {
+function ProductImages({ productImages }) {
   const [mainImage, setMainImage] = useState(productImages[0]);
   const [activeThumbnailIndex, setActiveThumbnailIndex] = useState(0);
   const handleThumbNailClick = (clickedItem, index) => {
@@ -30,5 +31,9 @@ function ProductImages() {
     </div>
   );
 }
+
+ProductImages.propTypes = {
+  productImages: arrayOf(string).isRequired,
+};
 
 export default ProductImages;

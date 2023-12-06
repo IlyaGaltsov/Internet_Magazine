@@ -32,7 +32,7 @@ Products.propTypes = {
       description: PropTypes.string,
       thumb: PropTypes.string,
       price: PropTypes.number.isRequired,
-      originalPrice: PropTypes.number,
+      discountedPrice: PropTypes.number,
       discount: PropTypes.number,
       rating: PropTypes.number.isRequired,
       images: PropTypes.arrayOf(PropTypes.string),
@@ -40,6 +40,7 @@ Products.propTypes = {
       sizes: PropTypes.arrayOf(PropTypes.string),
       count: PropTypes.number,
       isNew: PropTypes.bool,
+      isSale: PropTypes.bool,
     }),
   ).isRequired,
 };

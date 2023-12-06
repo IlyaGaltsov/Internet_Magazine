@@ -12,11 +12,13 @@ function ProductItem({ product }) {
       <h3 className="product_name">{product.title}</h3>
       <Rating rating={product.rating} />
       <div className="product_price">
-        {product.originalPrice ? (
+        {product.discountedPrice ? (
           <>
-            <span className="price">${product.price}</span>
-            <span className="price discounted">${product.originalPrice}</span>
-            <span className="discount">-{product.discount}%</span>
+            <span className="price">${product.discountedPrice}</span>
+            <span className="price discounted">${product.price}</span>
+            <span className="discount">
+              -{(((product.price - product.discountedPrice) / product.price) * 100).toFixed(0)}%
+            </span>
           </>
         ) : (
           <span className="price">${product.price}</span>
@@ -33,7 +35,7 @@ ProductItem.propTypes = {
     description: PropTypes.string,
     thumb: PropTypes.string,
     price: PropTypes.number.isRequired,
-    originalPrice: PropTypes.number,
+    discountedPrice: PropTypes.number,
     discount: PropTypes.number,
     rating: PropTypes.number.isRequired,
     images: PropTypes.arrayOf(PropTypes.string),
@@ -41,6 +43,7 @@ ProductItem.propTypes = {
     sizes: PropTypes.arrayOf(PropTypes.string),
     count: PropTypes.number,
     isNew: PropTypes.bool,
+    isSale: PropTypes.bool,
   }).isRequired,
 };
 
