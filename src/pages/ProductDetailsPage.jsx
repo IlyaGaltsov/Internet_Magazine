@@ -10,7 +10,7 @@ function ProductDetailsPage() {
   const product = products.find((item) => item.id === parseInt(id, 10));
 
   return (
-    <div className="product-details-page">
+    <div className="container product-details-page">
       <div className="product-info-details">
         <ProductImages productImages={product.images} />
         <ProductInfo productData={product} />
