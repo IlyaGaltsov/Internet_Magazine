@@ -2,6 +2,9 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './OrderSummary.css';
 
+import promoCodeSvg from '../../assets/images/cart-images/promocode.svg';
+import checkoutSvg from '../../assets/images/cart-images/checkout.svg';
+
 function OrderSummary({ products }) {
   const [promoCode, setPromoCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
@@ -42,12 +45,16 @@ function OrderSummary({ products }) {
           <span className="total-bold">${total.toFixed(2)}</span>
         </div>
         <div className="promo-code">
-          <input
-            type="text"
-            placeholder="Add promo code"
-            value={promoCode}
-            onChange={handlePromoCodeChange}
-          />
+          <div className="promo-code-input-container">
+            <img src={promoCodeSvg} alt="promocode" className="promo-code-icon" />
+            <input
+              type="text"
+              placeholder="Add promo code"
+              value={promoCode}
+              onChange={handlePromoCodeChange}
+              className="promo-code-input"
+            />
+          </div>
           <button type="button" onClick={handleApplyPromoCode}>
             Apply
           </button>
@@ -55,6 +62,7 @@ function OrderSummary({ products }) {
       </div>
       <button type="button" className="go-to-checkout-button">
         Go to Checkout
+        <img src={checkoutSvg} alt="Go to Checkout" />
       </button>
     </div>
   );

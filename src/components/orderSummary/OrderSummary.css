@@ -11,27 +11,33 @@
     font-family: 'Satoshi';
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
   
 .order-summary-details {
     margin-bottom: 20px;
 }
+
+.order-summary-details p {
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 500;
+}
   
 .order-summary-details div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.order-summary-details div .discount-applied {
+    color: #ff3333;
 }
 
 .order-summary-details .price-bold {
     font-family: 'Satoshi';
     font-size: 20px;
     font-weight: 700;
-}
-
-.order-summary-details div .discount-applied {
-    color:#ff3333;
 }
 
 .order-summary-details .total-bold {
@@ -52,14 +58,27 @@
     align-items: center;
     margin-top: 24px;
 }
+
+.promo-code-input-container {
+    position: relative;
+}
   
 .promo-code input {
     margin-right: 10px;
-    padding: 10px;
-    width: 326px; 
+    padding: 10px 10px 10px 40px;
+    width: 326px;
+    height: 48px;
     border: 1px solid #ccc;
     border-radius: 62px;
     background: #F0F0F0;
+}
+
+.promo-code-icon {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 24px;
+    height: 24px;
 }
 
 .promo-code button {
@@ -70,11 +89,13 @@
     color: white;
     cursor: pointer;
     width: 119px;
+    height: 48px;
+    margin-bottom: 23px;
 }
   
 .go-to-checkout-button {
-    width: 400px;
-    height: 52px;
+    width: 457px;
+    height: 60px;
     padding: 16px 54px;
     border-radius: 62px;
     background: #000;
@@ -85,6 +106,4 @@
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
-    width: 457px;
-    margin-top: 24px;
 }
