@@ -54,3 +54,11 @@ select[name="section_tab"] option {
 .raiting p{
     padding: 5px 0 0 15px;
 }
+.more{
+    margin-left: 400px;
+}
+.load_more_btn{
+    font-size: 18px;
+    font-weight: 800;
+    color:gray;
+}
