@@ -1,10 +1,6 @@
-import ApplyBtn from '../components/applyBtn/ApplyBtn';
-import Dress from '../components/dressFilter/Dress';
 import Filter from '../components/filter/Filter';
-import Colors from '../components/filterColors/Colors';
-import Size from '../components/filterSize/Size';
-import './styles/ClothPage.css';
 import ClothPage from '../components/clothPage/ClothPage';
+import './styles/ClothPage.css';
 
 function CasualPage() {
   return (
@@ -13,10 +9,6 @@ function CasualPage() {
         <div className="cloth_page">
           <div className="filter_on_page">
             <Filter />
-            <Colors />
-            <Size />
-            <Dress />
-            <ApplyBtn />
           </div>
           <ClothPage />
         </div>

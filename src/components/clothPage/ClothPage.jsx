@@ -158,6 +158,9 @@ function ClothPage() {
             <p>145$</p>
           </div>
         </div>
+        <div className="more">
+          <input type="button" className="load_more_btn" value="Load More" />
+        </div>
       </div>
     </div>
   );
