@@ -6,24 +6,51 @@
     max-width: 505px;
     height: 458px;
 }
+
+.order-summary-container h2 {
+    font-family: 'Satoshi';
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
   
 .order-summary-details {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
   
 .order-summary-details div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.order-summary-details .price-bold {
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-summary-details div .discount-applied {
+    color:#ff3333;
+}
+
+.order-summary-details .total-bold {
+    font-family: 'Satoshi';
+    font-size: 24px;
+    font-weight: 700;
 }
   
 .total {
-    font-weight: bold;
+    font-family: 'Satoshi';
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 24px;
 }
   
 .promo-code {
     display: flex;
     align-items: center;
+    margin-top: 24px;
 }
   
 .promo-code input {
@@ -59,4 +86,5 @@
     line-height: normal;
     cursor: pointer;
     width: 457px;
+    margin-top: 24px;
 }

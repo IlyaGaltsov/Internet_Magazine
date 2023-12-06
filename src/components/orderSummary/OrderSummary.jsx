@@ -25,19 +25,21 @@ function OrderSummary({ products }) {
       <div className="order-summary-details">
         <div>
           <span>Subtotal:</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span className="price-bold">${subtotal.toFixed(2)}</span>
         </div>
         <div>
           <span>Discount (-20%):</span>
-          <span>${discount.toFixed(2)}</span>
+          <span className={`price-bold ${discountApplied ? 'discount-applied' : ''}`}>
+            ${discount.toFixed(2)}
+          </span>
         </div>
         <div>
           <span>Delivery Fee:</span>
-          <span>${deliveryFee.toFixed(2)}</span>
+          <span className="price-bold">${deliveryFee.toFixed(2)}</span>
         </div>
         <div className="total">
           <span>Total:</span>
-          <span>${total.toFixed(2)}</span>
+          <span className="total-bold">${total.toFixed(2)}</span>
         </div>
         <div className="promo-code">
           <input
