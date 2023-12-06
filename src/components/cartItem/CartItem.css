@@ -32,12 +32,12 @@
 .cart-item-info.column-align p {
     margin: 5px 0;
 }
-  
 
 .cart-item-info p.name {
     font-family: 'Satoshi';
     font-size: 20px;
     font-weight: 700;
+    
 }
   
 .cart-item-info p.price {
