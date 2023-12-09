@@ -1,132 +1,152 @@
-.filter_conainer{
-    margin: 0 25px;
+.filter_conainer {
+  margin: 0 25px;
 }
-.filter{
-    width: 300px;
+.filter {
+  width: 300px;
 }
-.title h2{
-    font-size: 27px;
-    font-weight: 800;
+.title h2 {
+  font-size: 27px;
+  font-weight: 800;
 }
-.menu_filter{
-    display: flex;
-    gap: 160px;
+.menu_filter {
+  display: flex;
+  gap: 160px;
 }
-.title{
-    margin-right: 158px;
+.title {
+  margin-right: 158px;
 }
-.menu_filter img{
-    width: 24px;
-    height: 24px;
-    margin: 50px 0 0 0;
+.menu_filter img {
+  width: 24px;
+  height: 24px;
+  margin: 50px 0 0 0;
 }
 .filter_forms {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 50px 0;
 }
-.form{
-    display: flex;
-    flex-direction: column;
+.form {
+  display: flex;
+  flex-direction: column;
 }
-.label_for_filters{
-    font-size: 24px;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
+.label_for_filters {
+  font-size: 24px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
 }
 .label_for_filters input {
-    margin-left: auto; /* Adjust this value as needed */
+  margin-left: auto; /* Adjust this value as needed */
 }
-.title{
-    margin: 50px 0 20px 0;
-    display: flex;
-    gap: 180px;
+.title {
+  margin: 50px 0 20px 0;
+  display: flex;
+  gap: 180px;
 }
-.title p{
-    font-size: 27px;
-    font-weight: 800;
+.title p {
+  font-size: 27px;
+  font-weight: 800;
 }
 .setColors {
-    width: 250px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    box-sizing: border-box;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .color_btn {
-    flex: 0 0 calc(20% - 10px);
-    height: 37px;
-    border-radius: 60%;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  flex: 0 0 calc(20% - 10px);
+  height: 37px;
+  border-radius: 60%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-input.green { background-color: #00C12B; }
-input.red { background-color: red; }
-input.yellow { background-color: yellow; }
-input.orange { background-color: orange; }
-input.blue { background-color: #06CAF5; }
-input.darkblue { background-color: blue; }
-input.purple { background-color: purple; }
-input.pink { background-color: #F506A4; }
-input.white { background-color: white; }
-input.black { background-color: black; }
-.size_container{
-    margin: 50px 0 0 0;
-    width: 300px;
+input.green {
+  background-color: #00c12b;
 }
-.title_size{
-    display: flex;
-    gap: 210px;
+input.red {
+  background-color: red;
 }
-.title_size p{
-    font-size: 27px;
-    font-weight: 800;
+input.yellow {
+  background-color: yellow;
 }
-.size_chart{
-    margin-left: -20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 300px;
+input.orange {
+  background-color: orange;
+}
+input.blue {
+  background-color: #06caf5;
+}
+input.darkblue {
+  background-color: blue;
+}
+input.purple {
+  background-color: purple;
+}
+input.pink {
+  background-color: #f506a4;
+}
+input.white {
+  background-color: white;
+}
+input.black {
+  background-color: black;
+}
+.size_container {
+  margin: 50px 0 0 0;
+  width: 300px;
+}
+.title_size {
+  display: flex;
+  gap: 210px;
+}
+.title_size p {
+  font-size: 27px;
+  font-weight: 800;
+}
+.size_chart {
+  margin-left: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 300px;
 }
 .size_btn {
-    padding:10px 15px;
-    font-size: 22px;
-    margin:0 10px 0 10px;
+  padding: 10px 15px;
+  font-size: 22px;
+  margin: 0 10px 0 10px;
 }
-.size_btn:hover{
-    background-color:black;
-    color: white;
-    border-radius:60%;
+.size_btn:hover {
+  background-color: black;
+  color: white;
+  border-radius: 60%;
 }
-.price{
-    margin: 50px 0 0 0;
+.price {
+  /* margin: 50px 0 0 0; */
 }
-.title_price h2{
-    padding-bottom: 20px;
-    font-size: 27px;
-    font-weight: 800;
+.title_price h2 {
+  padding-bottom: 20px;
+  font-size: 27px;
+  font-weight: 800;
 }
-.sex{
-    margin: 50px 0 0 0;
+.sex {
+  margin: 50px 0 0 0;
 }
-.title_sex h2{
-    font-size: 27px;
-    font-weight: 800;
-    padding-bottom: 20px;
+.title_sex h2 {
+  font-size: 27px;
+  font-weight: 800;
+  padding-bottom: 20px;
 }
-.btn{
-    width: 240px;
-    height: 50px;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    border-radius: 500px;
+.btn {
+  width: 240px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 500px;
 }
-.applyBtn{
-    margin: 30px 0 0 0;
-    margin-left: -5px;
+.applyBtn {
+  margin: 30px 0 0 0;
+  margin-left: -5px;
 }

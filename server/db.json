@@ -1,0 +1,221 @@
+{
+  "brands": [
+    {
+      "id": "versace",
+      "brandname": "Versace"
+    },
+    {
+      "id": "zara",
+      "brandname": "Zara"
+    },
+    {
+      "id": "gucci",
+      "brandname": "Gucci"
+    },
+    {
+      "id": "prada",
+      "brandname": "Prada"
+    },
+    {
+      "id": "calvin",
+      "brandname": "Calvin Klein"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "T-shirt with Tape Details",
+      "description": "some test description goes here",
+      "thumb": "1",
+      "price": 120,
+      "discountedPrice": 0,
+      "discount": 0,
+      "rating": 4,
+      "images": ["1", "2"],
+      "colors": ["black", "purple", "yellow"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": true,
+      "isSale": false,
+      "reviews": []
+    },
+    {
+      "id": 2,
+      "title": "Skinny Fit Jeans",
+      "description": "some test description goes here",
+      "thumb": "2",
+      "price": 260,
+      "discountedPrice": 240,
+      "discount": 8,
+      "rating": 3,
+      "images": ["2"],
+      "colors": ["black", "red", "yellow"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": true,
+      "isSale": true,
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "title": "Checkered Shirt",
+      "description": "some test description goes here",
+      "thumb": "3",
+      "price": 180,
+      "discountedPrice": 0,
+      "discount": 0,
+      "rating": 4,
+      "images": ["3"],
+      "colors": ["black", "brown", "yellow"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": true,
+      "isSale": false,
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "title": "Sleeve Striped T-shirt",
+      "description": "some test description goes here",
+      "thumb": "4",
+      "price": 160,
+      "discountedPrice": 130,
+      "discount": 19,
+      "rating": 4,
+      "images": ["4", "3"],
+      "colors": ["black", "brown", "purple"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": true,
+      "isSale": true,
+      "reviews": []
+    },
+    {
+      "id": 5,
+      "title": "Vertical Striped Shirt",
+      "description": "some test description goes here",
+      "thumb": "5",
+      "url": "#",
+      "price": 232,
+      "discountedPrice": 212,
+      "discount": 9,
+      "rating": 5,
+      "images": ["5"],
+      "colors": ["black", "brown", "green"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": false,
+      "isSale": true,
+      "reviews": []
+    },
+    {
+      "id": 6,
+      "title": "Courage Graphic T-shirt",
+      "description": "some test description goes here",
+      "thumb": "6",
+      "url": "#",
+      "price": 145,
+      "discountedPrice": 0,
+      "discount": 0,
+      "rating": 4,
+      "images": ["6"],
+      "colors": ["black", "brown", "yellow"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": false,
+      "isSale": false,
+      "reviews": []
+    },
+    {
+      "id": 7,
+      "title": "Loose Fit Bermuda Shorts",
+      "description": "some test description goes here",
+      "thumb": "7",
+      "url": "#",
+      "price": 80,
+      "discountedPrice": 0,
+      "discount": 0,
+      "rating": 3,
+      "images": ["7"],
+      "colors": ["orange", "purple"],
+      "sizes": ["Small", "Large", "X-Large"],
+      "count": 1,
+      "isNew": true,
+      "isSale": false,
+      "reviews": []
+    },
+    {
+      "id": 8,
+      "title": "Faded Skinny Jeans",
+      "description": "This fluid V-neck blouse will skim and float over your body. Elegant and tailored with the ease of a tee, it was constructed with comfortable stretch from an extra special, washable crepe de chine. We love the soft volume that flows down from the pleats at the neck and the elegant trim finishes.",
+      "thumb": "8",
+      "url": "#",
+      "price": 200,
+      "discountedPrice": 0,
+      "discount": 0,
+      "rating": 4,
+      "images": ["8"],
+      "colors": ["black", "brown", "yellow"],
+      "sizes": ["S", "M", "L"],
+      "count": 1,
+      "isNew": false,
+      "isSale": true,
+      "reviews": []
+    },
+    {
+      "id": 9,
+      "title": "One Life Graphic T-shirt",
+      "description": "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "thumb": "3",
+      "price": 300,
+      "discountedPrice": 260,
+      "discount": 13,
+      "rating": 4.5,
+      "images": ["3"],
+      "colors": ["#4F4631", "#314F4A", "#31344F"],
+      "sizes": ["Small", "Medium", "Large", "X-Large"],
+      "count": 1,
+      "isNew": false,
+      "isSale": true,
+      "reviews": []
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Sara M.",
+      "rating": 5,
+      "quote": "\"I'blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I'bought has exceeded my expectations.\""
+    },
+    {
+      "id": 2,
+      "name": "Alex K.",
+      "rating": 5,
+      "quote": "\"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”"
+    },
+    {
+      "id": 3,
+      "name": "James L.",
+      "rating": 5,
+      "quote": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”"
+    },
+    {
+      "id": 4,
+      "name": "Emily M.",
+      "rating": 5,
+      "quote": "\"I'blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I'bought has exceeded my expectations.\""
+    },
+    {
+      "id": 5,
+      "name": "Cristine K.",
+      "rating": 5,
+      "quote": "\"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”"
+    },
+    {
+      "id": 6,
+      "name": "Phillip L.",
+      "rating": 5,
+      "quote": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”"
+    }
+  ]
+}

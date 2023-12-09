@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Rate, Space } from 'antd';
 import './ProductInfo.css';
 import { shape } from 'prop-types';

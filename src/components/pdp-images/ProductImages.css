@@ -1,30 +1,31 @@
 .images-container {
-    display: flex;
+  display: flex;
 }
 
 .thumbnail {
-    width: 152px;
-    height: 167px;
-    border-radius: 20px;
-    cursor: pointer;
+  width: 152px;
+  /* height: 167px; */
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .thumbnail.active {
-    border: 1px solid #000;
+  border: 1px solid #000;
 }
 
 .thumbnails-container {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .main-image-container {
-    margin-left: 14px;
+  margin-left: 14px;
 }
 
 .main-image {
-    width: 444px;
-    height: 530px;
-    border-radius: 20px;
+  width: 444px;
+  height: 530px;
+  border-radius: 20px;
 }

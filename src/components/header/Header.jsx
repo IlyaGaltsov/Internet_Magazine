@@ -15,10 +15,10 @@ function Header() {
             <div className="header_nav-main">
               <ul>
                 <li>
-                  <Link to="/">On Sale</Link>
+                  <Link to="/products?isSale=true">On Sale</Link>
                 </li>
                 <li>
-                  <Link to="/">New Arrivals</Link>
+                  <Link to="/products?isNew=true">New Arrivals</Link>
                 </li>
                 <li>
                   <Link to="/">Brands</Link>

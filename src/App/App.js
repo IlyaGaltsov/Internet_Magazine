@@ -12,11 +12,14 @@ import GymPage from '../pages/GymPage';
 import FormalPage from '../pages/FormalPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import CartPage from '../pages/CartPage';
+import ProductsPage from '../pages/Products';
+import ScrollToTop from '../components/scrollToTop/scrolToTop';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -27,6 +30,7 @@ function App() {
           <Route path="/gym" element={<GymPage />} />
           <Route path="/formal" element={<FormalPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/products" element={<ProductsPage />} />
         </Routes>
         <Footer />
       </Router>

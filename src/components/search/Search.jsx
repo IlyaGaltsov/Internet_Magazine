@@ -23,8 +23,10 @@ function Search() {
   }, []);
 
   const handleSearch = (results) => {
-    setProducts(results);
-    setShowResults(results.length > 0);
+    if (inputValue) {
+      setProducts(results);
+      setShowResults(results.length > 0);
+    }
   };
 
   const handleResultSelect = () => {
