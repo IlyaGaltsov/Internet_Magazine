@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
-
-import './Products.css';
+import { useNavigate } from 'react-router-dom';
 import ProductItem from '../product-item/ProductItem';
 
-function Products({ title, products }) {
+import './Products.css';
+
+function Products({ title, products, link }) {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate(link);
+  };
+
   return (
     <section className="products">
       <div className="container">
@@ -14,8 +20,12 @@ function Products({ title, products }) {
               <ProductItem product={product} key={product.id} />
             ))}
           </div>
-          <div className="view-all-button">
-            <button type="button">View All</button>
+          <div className="view-all-button_wrapper">
+            {link && (
+              <button type="button" className="view-all-button" onClick={handleButtonClick}>
+                View All
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -25,6 +35,7 @@ function Products({ title, products }) {
 
 Products.propTypes = {
   title: PropTypes.string.isRequired,
+  link: PropTypes.string,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -43,6 +54,10 @@ Products.propTypes = {
       isSale: PropTypes.bool,
     }),
   ).isRequired,
+};
+
+Products.defaultProps = {
+  link: null,
 };
 
 export default Products;

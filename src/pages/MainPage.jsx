@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
+
 import Promo from '../components/promo/Promo';
 import Brands from '../components/brands/Brands';
 import Products from '../components/products/Products';
 import Browse from '../components/browse/Browse';
 import Reviews from '../components/reviews/Reviews';
-import { products } from '../data/products';
-import { reviews } from '../data/reviews';
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+
+import { useGetNewArrivalsQuery, useGetTopSelleresQuery } from '../slices/productsApiSlice';
+import { useGetReviewsQuery } from '../slices/reviewsApiSlice';
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -17,25 +18,116 @@ function shuffleArray(array) {
 }
 
 function MainPage() {
-  const arrivalsProducts = products.filter((product) => product.isNew);
-  const productsTopSelling = shuffleArray([...products]).slice(0, 4);
-  // const dispatch = useDispatch();
-  // const keyword = match.params.keyword;
+  const {
+    data: productsNewArrival,
+    isLoading: isLoadingNewArrival,
+    error: errorNewArrival,
+  } = useGetNewArrivalsQuery();
 
-  // useEffect(() => {
-  //   dispatch(getProducts(keyword, MainPage));
-  // });
+  const {
+    data: productsTopSellers,
+    isLoading: isLoadingTopSellers,
+    error: errorTopSellers,
+  } = useGetTopSelleresQuery();
+
+  const { data: reviews, isLoading: isLoadingReviews, error: errorReviews } = useGetReviewsQuery();
 
   return (
     <div>
       <Promo />
       <Brands />
-      <Products title="New arrivals" products={arrivalsProducts} />
-      <Products title="Top selling" products={productsTopSelling} />
+      <ProductsRender
+        isLoading={isLoadingNewArrival}
+        error={errorNewArrival}
+        products={productsNewArrival?.length ? productsNewArrival.slice(0, 4) : []}
+        title="New arrival"
+        link="/products?isNew=true"
+      />
+      <ProductsRender
+        isLoading={isLoadingTopSellers}
+        error={errorTopSellers}
+        products={
+          productsTopSellers?.length ? shuffleArray([...productsTopSellers]).slice(0, 4) : []
+        }
+        title="Top selling"
+        link="/products"
+      />
       <Browse />
-      <Reviews reviews={reviews} />
+      <RenderedReviews
+        isLoading={isLoadingReviews}
+        error={errorReviews}
+        reviews={reviews?.length ? reviews : []}
+      />
     </div>
   );
 }
 
 export default MainPage;
+
+function ProductsRender({ isLoading, error, products, title, link }) {
+  if (isLoading) return <h2 className="container">Loading...</h2>;
+  if (error) return <div className="container">{error && (error.data.message || error.error)}</div>;
+  return <Products title={title} products={products} link={link} />;
+}
+
+ProductsRender.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.shape({
+    data: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    error: PropTypes.string,
+  }),
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      thumb: PropTypes.string,
+      price: PropTypes.number.isRequired,
+      discountedPrice: PropTypes.number,
+      discount: PropTypes.number,
+      rating: PropTypes.number.isRequired,
+      images: PropTypes.arrayOf(PropTypes.string),
+      colors: PropTypes.arrayOf(PropTypes.string),
+      sizes: PropTypes.arrayOf(PropTypes.string),
+      count: PropTypes.number,
+      isNew: PropTypes.bool,
+      isSale: PropTypes.bool,
+    }),
+  ).isRequired,
+};
+
+ProductsRender.defaultProps = {
+  error: null,
+};
+
+function RenderedReviews({ isLoading, error, reviews }) {
+  if (isLoading) return <h2 className="container">Loading...</h2>;
+  if (error) return <div className="container">{error.data.message || error.error}</div>;
+  return <Reviews reviews={reviews} />;
+}
+
+RenderedReviews.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.shape({
+    data: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    error: PropTypes.string,
+  }),
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      quote: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+RenderedReviews.defaultProps = {
+  error: null,
+};

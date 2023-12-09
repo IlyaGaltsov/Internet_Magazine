@@ -1,4 +1,4 @@
-import { objectOf } from 'prop-types';
+import PropTypes from 'prop-types';
 import './ProductQuantity.css';
 
 function ProductQuantity({ onQuantityFunc }) {
@@ -11,11 +11,12 @@ function ProductQuantity({ onQuantityFunc }) {
 
   return (
     <div className="quantity-adjuster">
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div
+      <button
+        type="button"
         onClick={() => {
           handleQuantityChange(quantity - 1);
         }}
+        aria-label="Уменьшить количество"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,13 +30,14 @@ function ProductQuantity({ onQuantityFunc }) {
             fill="black"
           />
         </svg>
-      </div>
+      </button>
       <span>{quantity}</span>
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div
+      <button
+        type="button"
         onClick={() => {
           handleQuantityChange(quantity + 1);
         }}
+        aria-label="Увеличить количество"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,13 +51,16 @@ function ProductQuantity({ onQuantityFunc }) {
             fill="black"
           />
         </svg>
-      </div>
+      </button>
     </div>
   );
 }
 
 ProductQuantity.propTypes = {
-  onQuantityFunc: objectOf.isRequired,
+  onQuantityFunc: PropTypes.shape({
+    setQuantity: PropTypes.func.isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default ProductQuantity;

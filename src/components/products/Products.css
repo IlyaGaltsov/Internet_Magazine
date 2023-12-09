@@ -18,6 +18,9 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 62px;
   padding: 15px 80px;
-  width: 218px;
+}
+
+.view-all-button_wrapper {
   margin: 0 auto;
+  width: 218px;
 }

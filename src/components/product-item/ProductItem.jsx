@@ -7,7 +7,11 @@ function ProductItem({ product }) {
   return (
     <Link to={`/product/${product.id}`} key={product.title} className="product">
       <div className="image-wrapper">
-        <img src={product.thumb} alt={product.title} className="product_image" />
+        <img
+          src={`/assets/images/products/${product.thumb}.png`}
+          alt={product.title}
+          className="product_image"
+        />
       </div>
       <h3 className="product_name">{product.title}</h3>
       <Rating rating={product.rating} />

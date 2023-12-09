@@ -1,19 +1,33 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { products } from '../../../data/products';
 import SearchImg from '../../../assets/images/icons/search.svg';
+
+import { useGetSearchProductsQuery } from '../../../slices/productsApiSlice';
+
 import './SearchInput.css';
 
 function SearchInput({ setResults, inputValue, setInputValue }) {
-  const filterData = (value) => {
-    const results = products.filter(
-      (product) => value && product?.title.toLowerCase().includes(value.toLowerCase()),
-    );
-    setResults(results);
-  };
+  const [debouncedValue, setDebouncedValue] = useState('');
+  const { data: results } = useGetSearchProductsQuery(debouncedValue, {
+    skip: !debouncedValue || debouncedValue.length < 3,
+  });
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedValue(inputValue);
+    }, 450);
+
+    return () => clearTimeout(timerId);
+  }, [inputValue]);
+
+  useEffect(() => {
+    if (results) {
+      setResults(results);
+    }
+  }, [results, setResults]);
 
   const handleChange = (value) => {
     setInputValue(value);
-    filterData(value);
   };
 
   return (
