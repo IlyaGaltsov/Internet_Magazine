@@ -1,27 +1,35 @@
 import { Rate, Space } from 'antd';
 import './ProductInfo.css';
 import { shape } from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
 import ProductAddToCart from '../pdp-add-to-cart/ProductAddToCart';
 
-const cartArr = [];
-
 function ProductInfo({ productData }) {
-  const [color, setColor] = useState(productData.colors[0]);
-  const [size, setSize] = useState(productData.sizes[0]);
+  const { title, rating, description, colors, sizes, price, discountedPrice, discount, thumb } =
+    productData;
+  const [color, setColor] = useState(colors[0]);
+  const [size, setSize] = useState(sizes[0]);
   const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useState(cartArr);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('userCart')) || []);
+
+  useEffect(() => {
+    localStorage.setItem('userCart', JSON.stringify(cart));
+  }, [cart]);
 
   const handleAddToCart = () => {
     const newItem = {
-      id: Date.now(),
-      itemTitle: productData.title,
+      itemId: Date.now(),
+      itemTitle: title,
       itemColor: color,
       itemSize: size,
       itemQuantity: quantity,
+      itemPrice: price,
+      itemDiscountedPrice: discountedPrice,
+      itemDiscount: discount,
+      itemThumb: thumb,
     };
 
     const existingItemIndex = cart.findIndex(
@@ -48,35 +56,30 @@ function ProductInfo({ productData }) {
   return (
     <div>
       <div className="product-info">
-        <h2 className="product-title">{productData.title}</h2>
+        <h2 className="product-title">{title}</h2>
         <Space className="product-rating">
-          <Rate allowHalf disabled defaultValue={productData.rating} /> {`${productData.rating}/5`}
+          <Rate allowHalf disabled defaultValue={rating} /> {`${rating}/5`}
         </Space>
-        {productData.discountedPrice ? (
+        {discountedPrice ? (
           <div className="price-info">
-            <span className="discounted-price">${productData.discountedPrice}</span>
-            <span className="original-price">${productData.price}</span>
+            <span className="discounted-price">${discountedPrice}</span>
+            <span className="original-price">${price}</span>
             <span className="discount-percentages">
-              -
-              {(
-                ((productData.price - productData.discountedPrice) / productData.price) *
-                100
-              ).toFixed(0)}
-              %
+              -{(((price - discountedPrice) / price) * 100).toFixed(0)}%
             </span>
           </div>
         ) : (
           <div>
-            <span className="discounted-price">${productData.price}</span>
+            <span className="discounted-price">${price}</span>
           </div>
         )}
-        <p className="product-description">{productData.description}</p>
+        <p className="product-description">{description}</p>
       </div>
       <div className="product-color">
-        <ProductColors colors={productData.colors} onColorFunc={setColor} />
+        <ProductColors colors={colors} onColorFunc={setColor} />
       </div>
       <div className="product-size">
-        <ProductSizes sizes={productData.sizes} onSizeFunc={setSize} />
+        <ProductSizes sizes={sizes} onSizeFunc={setSize} />
       </div>
       <div className="product-quantity">
         <ProductQuantity onQuantityFunc={{ setQuantity, quantity }} />
