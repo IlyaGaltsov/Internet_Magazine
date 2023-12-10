@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Search from '../search/Search';
 import CartSvg from '../../assets/images/icons/cart.svg';
 import './Header.css';
@@ -9,19 +9,19 @@ function Header() {
       <div className="container">
         <div className="header_row">
           <div className="header_logo">
-            <Link to="/">SHOP.CO</Link>
+            <NavLink to="/">SHOP.CO</NavLink>
           </div>
           <nav className="header_nav">
             <div className="header_nav-main">
               <ul>
                 <li>
-                  <Link to="/products?isSale=true">On Sale</Link>
+                  <NavLink to="/products?isSale=true">On Sale</NavLink>
                 </li>
                 <li>
-                  <Link to="/products?isNew=true">New Arrivals</Link>
+                  <NavLink to="/products?isNew=true">New Arrivals</NavLink>
                 </li>
                 <li>
-                  <Link to="/">Brands</Link>
+                  <NavLink to="/">Brands</NavLink>
                 </li>
               </ul>
             </div>
@@ -29,9 +29,9 @@ function Header() {
             <div className="header_nav-profile">
               <ul>
                 <li>
-                  <Link to="/">
+                  <NavLink to="/cart">
                     <img src={CartSvg} alt="Cart" />
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>

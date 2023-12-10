@@ -12,7 +12,7 @@ import GymPage from '../pages/GymPage';
 import FormalPage from '../pages/FormalPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import CartPage from '../pages/CartPage';
-import ProductsPage from '../pages/Products';
+import ProductsPage from '../pages/ProductsPage';
 import ScrollToTop from '../components/scrollToTop/scrolToTop';
 
 function App() {
