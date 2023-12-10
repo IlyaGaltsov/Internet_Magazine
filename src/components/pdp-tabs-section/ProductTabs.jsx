@@ -2,11 +2,28 @@ import { useState } from 'react';
 import { Rate, Space } from 'antd';
 import { shape } from 'prop-types';
 import ReviewModal from '../pdp-review-modal/ReviewModal';
+import Accordion from '../accordion/Accordion';
 import Check from '../../assets/images/icons/check.svg';
 import './ProductTabs.css';
 
+const faqsData = [
+  {
+    question: 'What is my size?',
+    answer: 'You can find your size by referring to our size chart located on the product page.',
+  },
+  {
+    question: 'Do you have a referral program?',
+    answer: "Yes, we have a referral program. Check our 'Referral Program' page for more details.",
+  },
+  {
+    question: 'Where can I check the status of my order?',
+    answer:
+      "You can check the status of your order in the 'Order History' section of your account.",
+  },
+];
+
 function ProductTabs({ productData }) {
-  const [activeTab, setActiveTab] = useState('reviews');
+  const [activeTab, setActiveTab] = useState('faqs');
   const [reviews, setReviews] = useState(productData.reviews);
   const [showModal, setShowModal] = useState(false);
 
@@ -98,6 +115,12 @@ function ProductTabs({ productData }) {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {activeTab === 'faqs' && (
+          <div>
+            <Accordion accordionData={faqsData} />
           </div>
         )}
       </div>
