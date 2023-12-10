@@ -1,5 +1,6 @@
-import './Promo.css';
+import { Link } from 'react-router-dom';
 import PromoImg from '../../assets/images/banners/banner1.png';
+import './Promo.css';
 
 function Promo() {
   return (
@@ -13,9 +14,9 @@ function Promo() {
               out your individuality and cater to your sense of style.
             </div>
             <div className="promo_btn-wrapper">
-              <a href="#!" className="promo_btn">
+              <Link to="/products" className="promo_btn">
                 Shop Now
-              </a>
+              </Link>
             </div>
             <div className="promo_list-wrapper">
               <ul className="promo_list">
