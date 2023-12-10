@@ -21,7 +21,7 @@ function Header() {
                   <NavLink to="/products?isNew=true">New Arrivals</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">Brands</NavLink>
+                  <NavLink to="/brands">Brands</NavLink>
                 </li>
               </ul>
             </div>

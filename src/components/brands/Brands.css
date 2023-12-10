@@ -1,6 +1,19 @@
-.brands {
-  background-color: black;
+.light.brands {
+  background: initial;
+  color: initial;
+}
+
+.dark.brands {
+  background: black;
   color: white;
+}
+
+.brands_title {
+  padding-top: 72px;
+  padding-bottom: 55px;
+  text-align: center;
+  font-family: 'Integral';
+  font-size: 48px;
 }
 
 .brands_content {
@@ -10,4 +23,29 @@
 
 .brand-logo {
   padding: 44px 0;
+}
+
+.light .brand-logo {
+  display: flex;
+  justify-content: center;
+  max-width: 240px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 50px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 13px -6px rgba(0, 0, 0, 0.75);
+}
+
+.light .brand-logo:nth-child(5n) {
+  margin-right: 0;
+}
+
+.light .brand-logo:hover img {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .brand-logo img {
+  filter: invert(1);
 }

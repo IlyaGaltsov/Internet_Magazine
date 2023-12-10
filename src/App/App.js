@@ -13,7 +13,8 @@ import FormalPage from '../pages/FormalPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import CartPage from '../pages/CartPage';
 import ProductsPage from '../pages/ProductsPage';
-import ScrollToTop from '../components/scrollToTop/scrolToTop';
+import BrandsPage from '../pages/BrandsPages';
+import ScrollToTop from '../helpers/scrollToTop/scrolToTop';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/formal" element={<FormalPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/brands" element={<BrandsPage />} />
         </Routes>
         <Footer />
       </Router>
