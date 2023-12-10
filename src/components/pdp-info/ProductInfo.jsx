@@ -50,9 +50,6 @@ function ProductInfo({ productData }) {
     console.log('User cart', cart);
   };
 
-  // const handleColorClick = () => {
-  //
-  // }
   return (
     <div>
       <div className="product-info">

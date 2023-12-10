@@ -23,7 +23,7 @@ const faqsData = [
 ];
 
 function ProductTabs({ productData }) {
-  const [activeTab, setActiveTab] = useState('faqs');
+  const [activeTab, setActiveTab] = useState('reviews');
   const [reviews, setReviews] = useState(productData.reviews);
   const [showModal, setShowModal] = useState(false);
 
