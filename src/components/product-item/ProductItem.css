@@ -1,5 +1,10 @@
 .product {
   color: initial;
+  margin-right: 5.9%;
+}
+
+.product:nth-child(4n) {
+  margin-right: 0;
 }
 
 .image-wrapper {

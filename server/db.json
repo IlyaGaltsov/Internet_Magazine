@@ -1,24 +1,29 @@
 {
   "brands": [
     {
-      "id": "versace",
-      "brandname": "Versace"
+      "id": 1,
+      "brandname": "Versace",
+      "slug": "versace"
     },
     {
-      "id": "zara",
-      "brandname": "Zara"
+      "id": 2,
+      "brandname": "Zara",
+      "slug": "zara"
     },
     {
-      "id": "gucci",
-      "brandname": "Gucci"
+      "id": 3,
+      "brandname": "Gucci",
+      "slug": "gucci"
     },
     {
-      "id": "prada",
-      "brandname": "Prada"
+      "id": 4,
+      "brandname": "Prada",
+      "slug": "prada"
     },
     {
-      "id": "calvin",
-      "brandname": "Calvin Klein"
+      "id": 5,
+      "brandname": "Calvin Klein",
+      "slug": "calvin_klein"
     }
   ],
   "products": [
@@ -37,7 +42,8 @@
       "count": 1,
       "isNew": true,
       "isSale": false,
-      "reviews": []
+      "reviews": [],
+      "brands": ["versace"]
     },
     {
       "id": 2,
@@ -54,7 +60,8 @@
       "count": 1,
       "isNew": true,
       "isSale": true,
-      "reviews": []
+      "reviews": [],
+      "brands": ["zara"]
     },
     {
       "id": 3,
@@ -71,7 +78,8 @@
       "count": 1,
       "isNew": true,
       "isSale": false,
-      "reviews": []
+      "reviews": [],
+      "brands": ["versace"]
     },
     {
       "id": 4,
@@ -88,7 +96,8 @@
       "count": 1,
       "isNew": true,
       "isSale": true,
-      "reviews": []
+      "reviews": [],
+      "brands": ["calvin_klein"]
     },
     {
       "id": 5,
@@ -106,7 +115,8 @@
       "count": 1,
       "isNew": false,
       "isSale": true,
-      "reviews": []
+      "reviews": [],
+      "brands": ["zara"]
     },
     {
       "id": 6,
@@ -124,7 +134,8 @@
       "count": 1,
       "isNew": false,
       "isSale": false,
-      "reviews": []
+      "reviews": [],
+      "brands": ["prada"]
     },
     {
       "id": 7,
@@ -142,7 +153,8 @@
       "count": 1,
       "isNew": true,
       "isSale": false,
-      "reviews": []
+      "reviews": [],
+      "brands": ["versace"]
     },
     {
       "id": 8,
@@ -160,7 +172,8 @@
       "count": 1,
       "isNew": false,
       "isSale": true,
-      "reviews": []
+      "reviews": [],
+      "brands": ["prada"]
     },
     {
       "id": 9,
@@ -177,7 +190,8 @@
       "count": 1,
       "isNew": false,
       "isSale": true,
-      "reviews": []
+      "reviews": [],
+      "brands": ["gucci"]
     }
   ],
   "reviews": [

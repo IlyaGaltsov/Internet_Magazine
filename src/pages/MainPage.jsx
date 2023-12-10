@@ -6,6 +6,7 @@ import Products from '../components/products/Products';
 import Browse from '../components/browse/Browse';
 import Reviews from '../components/reviews/Reviews';
 
+import { useGetBrandsQuery } from '../slices/brandsApiSlice';
 import { useGetNewArrivalsQuery, useGetTopSelleresQuery } from '../slices/productsApiSlice';
 import { useGetReviewsQuery } from '../slices/reviewsApiSlice';
 
@@ -18,6 +19,8 @@ function shuffleArray(array) {
 }
 
 function MainPage() {
+  const { data: brands, isLoading: isLoadingBrands, error: errorBrands } = useGetBrandsQuery();
+
   const {
     data: productsNewArrival,
     isLoading: isLoadingNewArrival,
@@ -35,7 +38,11 @@ function MainPage() {
   return (
     <div>
       <Promo />
-      <Brands />
+      <BrandsRender
+        isLoading={isLoadingBrands}
+        error={errorBrands}
+        brands={brands?.length ? brands : []}
+      />
       <ProductsRender
         isLoading={isLoadingNewArrival}
         error={errorNewArrival}
@@ -53,7 +60,7 @@ function MainPage() {
         link="/products"
       />
       <Browse />
-      <RenderedReviews
+      <ReviewsRender
         isLoading={isLoadingReviews}
         error={errorReviews}
         reviews={reviews?.length ? reviews : []}
@@ -64,11 +71,44 @@ function MainPage() {
 
 export default MainPage;
 
+function BrandsRender({ isLoading, error, brands }) {
+  if (isLoading) return <h2 className="container">Loading...</h2>;
+  if (error) return <div className="container">{error.data.message || error.error}</div>;
+  return <Brands brands={brands} theme="dark" />;
+}
+
 function ProductsRender({ isLoading, error, products, title, link }) {
   if (isLoading) return <h2 className="container">Loading...</h2>;
   if (error) return <div className="container">{error && (error.data.message || error.error)}</div>;
   return <Products title={title} products={products} link={link} />;
 }
+
+function ReviewsRender({ isLoading, error, reviews }) {
+  if (isLoading) return <h2 className="container">Loading...</h2>;
+  if (error) return <div className="container">{error.data.message || error.error}</div>;
+  return <Reviews reviews={reviews} />;
+}
+
+BrandsRender.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.shape({
+    data: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    error: PropTypes.string,
+  }),
+  brands: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      brandname: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+BrandsRender.defaultProps = {
+  error: null,
+};
 
 ProductsRender.propTypes = {
   isLoading: PropTypes.bool.isRequired,
@@ -104,13 +144,7 @@ ProductsRender.defaultProps = {
   error: null,
 };
 
-function RenderedReviews({ isLoading, error, reviews }) {
-  if (isLoading) return <h2 className="container">Loading...</h2>;
-  if (error) return <div className="container">{error.data.message || error.error}</div>;
-  return <Reviews reviews={reviews} />;
-}
-
-RenderedReviews.propTypes = {
+ReviewsRender.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   error: PropTypes.shape({
     data: PropTypes.shape({
@@ -128,6 +162,6 @@ RenderedReviews.propTypes = {
   ).isRequired,
 };
 
-RenderedReviews.defaultProps = {
+ReviewsRender.defaultProps = {
   error: null,
 };

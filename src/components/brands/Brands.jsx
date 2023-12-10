@@ -1,32 +1,40 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import './Brands.css';
-import Calvin from '../../assets/images/brands/calvin.svg';
-import Gucci from '../../assets/images/brands/gucci.svg';
-import Prada from '../../assets/images/brands/prada.svg';
-import Versace from '../../assets/images/brands/versace.svg';
-import Zara from '../../assets/images/brands/zara.svg';
 
-function Brands() {
-  const brands = [
-    { name: 'Vercace', url: Versace },
-    { name: 'Zara', url: Zara },
-    { name: 'Gucci', url: Gucci },
-    { name: 'Prada', url: Prada },
-    { name: 'Calvin', url: Calvin },
-  ];
-
+function Brands({ title, brands, theme }) {
   return (
-    <section className="brands">
+    <section className={`${theme} brands`}>
       <div className="container">
+        {title && <h2 className="brands_title">{title}</h2>}
         <div className="brands_content">
           {brands.map((brand) => (
-            <div key={brand.name} className="brand-logo">
-              <img src={brand.url} alt={brand.name} />
-            </div>
+            <Link key={brand.id} className="brand-logo" to={`/products?brand=${brand.slug}`}>
+              <img src={`/assets/images/brands/${brand.slug}.svg`} alt={brand.name} />
+            </Link>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+Brands.propTypes = {
+  theme: PropTypes.string,
+  title: PropTypes.string,
+  brands: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      brandname: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+Brands.defaultProps = {
+  title: null,
+  theme: 'light',
+};
 
 export default Brands;
