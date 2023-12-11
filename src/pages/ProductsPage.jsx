@@ -1,73 +1,60 @@
 import { useSearchParams } from 'react-router-dom';
 import Products from '../components/products/Products';
-import {
-  useGetNewArrivalsQuery,
-  useGetOnSalesQuery,
-  useGetBrandProductsQuery,
-  useGetProductsQuery,
-} from '../slices/productsApiSlice';
+import { useGetFilteredProductsQuery } from '../slices/productsApiSlice';
 
 function ProductsPage() {
   const [searchParams] = useSearchParams();
+  const filterParams = {};
 
-  const isSale = searchParams.get('isSale');
-  const isNew = searchParams.get('isNew');
-  const brand = searchParams.get('brand');
-
-  const {
-    data: productsIsSale,
-    isLoading: isLoadingIsSale,
-    error: errorIsSale,
-  } = useGetOnSalesQuery(undefined, { skip: isNew || brand });
-
-  const {
-    data: productsNewArrival,
-    isLoading: isLoadingNewArrival,
-    error: errorNewArrival,
-  } = useGetNewArrivalsQuery(undefined, { skip: isSale || brand });
-
-  const {
-    data: productsIsBrand,
-    isLoading: isLoadingIsBrand,
-    error: errorIsBrand,
-  } = useGetBrandProductsQuery(brand, { skip: isNew || isSale });
-
-  const {
-    data: products,
-    isLoading: isLoadingProducts,
-    error: errorProducts,
-  } = useGetProductsQuery(undefined, { skip: isNew || isSale || brand });
-
-  const getContentAndTitle = () => {
-    if (isLoadingIsSale || isLoadingNewArrival || isLoadingProducts || isLoadingIsBrand) {
-      return { content: <div>Loading...</div>, title: '' };
+  // http://localhost:3000/products?isSale=true&brands=gucci&brands=prada&brands=zara
+  // Преобразовываем параметры из URL в объект
+  searchParams.forEach((value, key) => {
+    if (!filterParams[key]) {
+      filterParams[key] = new Set();
     }
+    filterParams[key].add(value);
+  });
 
-    if (errorIsSale || errorNewArrival || errorProducts || errorIsBrand) {
-      return { content: <div>Error</div>, title: '' };
-    }
+  // Преобразуем объект параметров обратно в строку запроса для передачи в сам запрос
+  const queryString = Object.entries(filterParams)
+    .reduce((acc, [key, values]) => {
+      values.forEach((value) => {
+        acc.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+      });
+      return acc;
+    }, [])
+    .join('&');
 
-    if (isSale) {
-      return { content: productsIsSale, title: 'On Sales' };
-    }
+  const { data: products, isLoading, error } = useGetFilteredProductsQuery(queryString);
 
-    if (isNew) {
-      return { content: productsNewArrival, title: 'New Arrivals' };
-    }
+  const getTitle = () => {
+    const brand = filterParams.brand ? [...filterParams.brand][0] : null;
+    const isSale = filterParams.isSale ? [...filterParams.isSale][0] : null;
+    const isNew = filterParams.isNew ? [...filterParams.isNew][0] : null;
 
     if (brand) {
-      const formattedTitle = brand.replace(/_/g, ' ');
-      return { content: productsIsBrand, title: formattedTitle };
+      return brand.replace(/_/g, ' ');
     }
-
-    return { content: products, title: 'Products' };
+    if (isSale === 'true') {
+      return 'On Sales';
+    }
+    if (isNew === 'true') {
+      return 'New Arrivals';
+    }
+    return 'Products';
   };
 
-  const { content, title } = getContentAndTitle();
+  const title = getTitle();
 
+  if (isLoading) {
+    return <div className="container">Loading...</div>;
+  }
+  if (error) {
+    return <div className="container">Error</div>;
+  }
   return (
     <section>
-      <Products title={title} products={content?.length ? content : []} />
+      <Products title={title} products={products?.length ? products : []} />
     </section>
   );
 }
