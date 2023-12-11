@@ -28,8 +28,7 @@ function ProductTabs({ productData }) {
   const [reviews, setReviews] = useState(JSON.parse(localStorage.getItem('userReviews')) || {});
   const [showModal, setShowModal] = useState(false);
 
-  // Get the reviews array for the specific product ID
-  const reviewsArray = reviews[productData.id] || [];
+  const reviewsArray = reviews[productData.id] || []; // get reviews array for specific id
 
   useEffect(() => {
     localStorage.setItem('userReviews', JSON.stringify(reviews));
@@ -114,9 +113,8 @@ function ProductTabs({ productData }) {
                   <p>Be the first to leave a review!</p>
                 </div>
               )}
-              {reviewsArray.map((review, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <div key={index} className="review-card">
+              {reviewsArray.map((review) => (
+                <div key={review.name} className="review-card">
                   <Space className="product-rating">
                     <Rate allowHalf disabled defaultValue={review.rating} />
                   </Space>

@@ -14,12 +14,10 @@ function ProductSizes({ sizes, onSizeFunc }) {
     <div>
       <p>Choose Size</p>
       {sizes.map((size, index) => (
-        // eslint-disable-next-line react/no-array-index-key
         <input
           type="button"
-          /* eslint-disable-next-line react/no-array-index-key */
-          key={index}
-          value={size}
+          key={size.toString()}
+          value={size.toString()}
           onClick={() => {
             handleSizeClick(size, index);
           }}
