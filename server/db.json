@@ -171,7 +171,7 @@
       "sizes": ["S", "M", "L"],
       "count": 1,
       "isNew": false,
-      "isSale": true,
+      "isSale": false,
       "reviews": [],
       "brands": ["prada"]
     },

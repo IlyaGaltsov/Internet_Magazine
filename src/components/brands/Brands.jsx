@@ -10,7 +10,7 @@ function Brands({ title, brands, theme }) {
         {title && <h2 className="brands_title">{title}</h2>}
         <div className="brands_content">
           {brands.map((brand) => (
-            <Link key={brand.id} className="brand-logo" to={`/products?brand=${brand.slug}`}>
+            <Link key={brand.id} className="brand-logo" to={`/products?brands=${brand.slug}`}>
               <img src={`/assets/images/brands/${brand.slug}.svg`} alt={brand.name} />
             </Link>
           ))}

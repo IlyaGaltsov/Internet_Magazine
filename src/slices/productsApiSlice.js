@@ -9,22 +9,11 @@ export const productsApiSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 5,
     }),
-    getNewArrivals: builder.query({
-      query: () => ({
-        url: `${PRODUCTS_URL}?isNew=true`,
-      }),
-      keepUnusedDataFor: 5,
-    }),
-    getOnSales: builder.query({
-      query: () => ({
-        url: `${PRODUCTS_URL}?isSale=true`,
-      }),
-      keepUnusedDataFor: 5,
-    }),
-    getBrandProducts: builder.query({
-      query: (brand) => ({
-        url: `${PRODUCTS_URL}?brands=${brand}`,
-      }),
+    getFilteredProducts: builder.query({
+      query: (queryParams) => {
+        const queryString = new URLSearchParams(queryParams).toString();
+        return { url: `${PRODUCTS_URL}?${queryString}` };
+      },
       keepUnusedDataFor: 5,
     }),
     getTopSelleres: builder.query({
@@ -50,10 +39,8 @@ export const productsApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useGetProductsQuery,
-  useGetNewArrivalsQuery,
-  useGetOnSalesQuery,
+  useGetFilteredProductsQuery,
   useGetTopSelleresQuery,
-  useGetBrandProductsQuery,
   useGetSearchProductsQuery,
   useGetProductDetailsQuery,
 } = productsApiSlice;
