@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { func } from 'prop-types';
-import './ReviewModal.css';
 import { Rate, Space } from 'antd';
-// eslint-disable-next-line import/no-unresolved
 import { useFormik } from 'formik';
 import { reviewModalScheme } from './ReviewModalScheme';
+import './ReviewModal.css';
 
 function ReviewModal({ onSubmit, onClose }) {
   const formik = useFormik({

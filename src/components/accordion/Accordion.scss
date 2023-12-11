@@ -1,0 +1,43 @@
+.accordion {
+  background: #FFF;
+
+
+  .accordion-item {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #D3D3D3;
+    background: #FFF;
+
+
+    .accordion-item-title {
+      display: flex;
+      justify-content: space-between;
+      color: #000;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      border-bottom: 1px solid #D3D3D3;
+      padding: 30px;
+      cursor: pointer;
+    }
+
+    .accordion-item-content {
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+
+      color: #000;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px; /* 144.444% */
+
+      &.show {
+        padding: 30px;
+        max-height: 1000px;
+      }
+    }
+  }
+}

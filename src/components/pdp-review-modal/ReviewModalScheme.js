@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { string, object } from 'yup';
 
 export const reviewModalScheme = object({
