@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Rate, Space } from 'antd';
 import { shape } from 'prop-types';
 import ReviewModal from '../pdp-review-modal/ReviewModal';
@@ -24,8 +24,16 @@ const faqsData = [
 
 function ProductTabs({ productData }) {
   const [activeTab, setActiveTab] = useState('reviews');
-  const [reviews, setReviews] = useState(productData.reviews);
+  // const [reviews, setReviews] = useState(productData.reviews);
+  const [reviews, setReviews] = useState(JSON.parse(localStorage.getItem('userReviews')) || {});
   const [showModal, setShowModal] = useState(false);
+
+  // Get the reviews array for the specific product ID
+  const reviewsArray = reviews[productData.id] || [];
+
+  useEffect(() => {
+    localStorage.setItem('userReviews', JSON.stringify(reviews));
+  }, [reviews]);
 
   const handleTabClick = (selectedTab) => {
     setActiveTab(selectedTab);
@@ -36,7 +44,15 @@ function ProductTabs({ productData }) {
   };
 
   const handleModalSubmit = (newReview) => {
-    setReviews([...reviews, newReview]);
+    const updatedReviews = { ...reviews };
+    if (updatedReviews[productData.id]) {
+      updatedReviews[productData.id].push(newReview);
+    } else {
+      updatedReviews[productData.id] = [newReview];
+    }
+
+    setReviews(updatedReviews);
+    // setReviews([...reviews, newReview]);
     setShowModal(false);
   };
 
@@ -85,20 +101,20 @@ function ProductTabs({ productData }) {
           <div>
             <div className="reviews-header">
               <h3>
-                All Reviews <span>({reviews.length})</span>
+                All Reviews <span>({reviewsArray.length})</span>
               </h3>
               <button type="button" onClick={handleWriteReviewClick}>
                 Write Review
               </button>
             </div>
             <div className="reviews-list">
-              {!reviews.length && (
+              {!reviewsArray.length && (
                 <div className="no-reviews">
                   <p>No reviews for the product yet...</p>
                   <p>Be the first to leave a review!</p>
                 </div>
               )}
-              {reviews.map((review, index) => (
+              {reviewsArray.map((review, index) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <div key={index} className="review-card">
                   <Space className="product-rating">
