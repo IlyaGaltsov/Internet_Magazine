@@ -12,7 +12,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     getFilteredProducts: builder.query({
       query: (queryParams) => {
         const queryString = new URLSearchParams(queryParams).toString();
-        return { url: `${PRODUCTS_URL}?${queryString}` };
+        return { url: `${PRODUCTS_URL}${queryString ? `?${queryString}` : ''}` };
       },
       keepUnusedDataFor: 5,
     }),
