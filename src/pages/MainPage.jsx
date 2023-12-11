@@ -77,7 +77,7 @@ export default MainPage;
 
 function LoaderOrError({ isLoading, error, children }) {
   if (isLoading) return <h2 className="container">Loading...</h2>;
-  if (error) return <div className="container">{error.data.message || error.error}</div>;
+  if (error) return <div className="container">{error.data?.message || error.error}</div>;
   return children;
 }
 
