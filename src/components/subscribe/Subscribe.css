@@ -50,3 +50,7 @@
   border-radius: 62px;
   width: 100%;
 }
+
+.error-message {
+  color: red;
+}
