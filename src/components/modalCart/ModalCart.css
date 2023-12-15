@@ -27,6 +27,8 @@
   
 .modal button {
     background: rgb(85, 82, 234);
+    border-radius: 62px;
+    width: 100px;
     margin: 0 20px;
     padding: 8px 16px;
     cursor: pointer;
