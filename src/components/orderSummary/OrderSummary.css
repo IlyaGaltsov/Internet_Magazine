@@ -4,7 +4,6 @@
     padding: 15px;
     margin: 10px;
     max-width: 505px;
-    height: 458px;
 }
 
 .order-summary-container h2 {
@@ -71,6 +70,13 @@
     border: 1px solid #ccc;
     border-radius: 62px;
     background: #F0F0F0;
+}
+
+.promo-code-error-message {
+    position: absolute;
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: 80px;
 }
 
 .promo-code-icon {

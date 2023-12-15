@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import CheckoutForm from '../checkoutForm/CheckoutForm';
 import './OrderSummary.css';
 
 import promoCodeSvg from '../../assets/images/cart-images/promocode.svg';
@@ -8,6 +9,25 @@ import checkoutSvg from '../../assets/images/cart-images/checkout.svg';
 function OrderSummary({ products }) {
   const [promoCode, setPromoCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
+  const [promoCodeError, setPromoCodeError] = useState('');
+  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
+
+  const handleGoToCheckout = () => {
+    setShowCheckoutForm(true);
+  };
+
+  const handleCheckoutSubmit = async (checkoutData, formikProps) => {
+    try {
+      if (formikProps.resetForm) {
+        formikProps.resetForm();
+      }
+    } catch (error) {
+      // Handle errors
+    } finally {
+      formikProps.setSubmitting(false);
+      setShowCheckoutForm(false);
+    }
+  };
 
   const subtotal = products.reduce((acc, product) => acc + product.price * product.quantity, 0);
   const discount = discountApplied ? subtotal * 0.2 : 0;
@@ -16,9 +36,17 @@ function OrderSummary({ products }) {
 
   const handlePromoCodeChange = (e) => {
     setPromoCode(e.target.value);
+    setPromoCodeError('');
   };
 
   const handleApplyPromoCode = () => {
+    const promoCodeRegex = /^[\p{L}\s-]+$/u;
+
+    if (!promoCodeRegex.test(promoCode.trim())) {
+      setPromoCodeError('Invalid promo code. Please use only letters, spaces, hyphens.');
+      return;
+    }
+
     setDiscountApplied(true);
   };
 
@@ -52,18 +80,20 @@ function OrderSummary({ products }) {
               placeholder="Add promo code"
               value={promoCode}
               onChange={handlePromoCodeChange}
-              className="promo-code-input"
+              className={`promo-code-input ${promoCodeError ? 'promo-code-error' : ''}`}
             />
           </div>
+          {promoCodeError && <p className="promo-code-error-message">{promoCodeError}</p>}
           <button type="button" onClick={handleApplyPromoCode}>
             Apply
           </button>
         </div>
       </div>
-      <button type="button" className="go-to-checkout-button">
+      <button type="button" onClick={handleGoToCheckout} className="go-to-checkout-button">
         Go to Checkout
         <img src={checkoutSvg} alt="Go to Checkout" />
       </button>
+      {showCheckoutForm && <CheckoutForm onSubmit={handleCheckoutSubmit} />}
     </div>
   );
 }
