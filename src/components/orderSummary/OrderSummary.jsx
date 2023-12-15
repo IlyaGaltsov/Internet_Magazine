@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import CheckoutForm from '../checkoutForm/CheckoutForm';
 import './OrderSummary.css';
 
 import promoCodeSvg from '../../assets/images/cart-images/promocode.svg';
@@ -9,6 +10,24 @@ function OrderSummary({ products }) {
   const [promoCode, setPromoCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
   const [promoCodeError, setPromoCodeError] = useState('');
+  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
+
+  const handleGoToCheckout = () => {
+    setShowCheckoutForm(true);
+  };
+
+  const handleCheckoutSubmit = async (checkoutData, formikProps) => {
+    try {
+      if (formikProps.resetForm) {
+        formikProps.resetForm();
+      }
+    } catch (error) {
+      // Handle errors
+    } finally {
+      formikProps.setSubmitting(false);
+      setShowCheckoutForm(false);
+    }
+  };
 
   const subtotal = products.reduce((acc, product) => acc + product.price * product.quantity, 0);
   const discount = discountApplied ? subtotal * 0.2 : 0;
@@ -70,10 +89,11 @@ function OrderSummary({ products }) {
           </button>
         </div>
       </div>
-      <button type="button" className="go-to-checkout-button">
+      <button type="button" onClick={handleGoToCheckout} className="go-to-checkout-button">
         Go to Checkout
         <img src={checkoutSvg} alt="Go to Checkout" />
       </button>
+      {showCheckoutForm && <CheckoutForm onSubmit={handleCheckoutSubmit} />}
     </div>
   );
 }
