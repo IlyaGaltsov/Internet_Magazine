@@ -15,26 +15,29 @@ import CartPage from '../pages/CartPage';
 import ProductsPage from '../pages/ProductsPage';
 import BrandsPage from '../pages/BrandsPages';
 import ScrollToTop from '../helpers/scrollToTop/scrolToTop';
+import { CartProvider } from '../components/cartContext/CartContext';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/product/:id" element={<ProductDetailsPage />} />
-          <Route path="/category" element={<CategoryPage />} />
-          <Route path="/casual" element={<CasualPage />} />
-          <Route path="/party" element={<PartyPage />} />
-          <Route path="/gym" element={<GymPage />} />
-          <Route path="/formal" element={<FormalPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/brands" element={<BrandsPage />} />
-        </Routes>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/product/:id" element={<ProductDetailsPage />} />
+            <Route path="/category" element={<CategoryPage />} />
+            <Route path="/casual" element={<CasualPage />} />
+            <Route path="/party" element={<PartyPage />} />
+            <Route path="/gym" element={<GymPage />} />
+            <Route path="/formal" element={<FormalPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/brands" element={<BrandsPage />} />
+          </Routes>
+          <Footer />
+        </CartProvider>
       </Router>
     </div>
   );
