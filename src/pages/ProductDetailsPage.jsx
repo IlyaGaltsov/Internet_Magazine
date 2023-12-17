@@ -6,7 +6,7 @@ import Products from '../components/products/Products';
 import { shuffleArray } from './MainPage';
 import { useGetProductDetailsQuery, useGetTopSelleresQuery } from '../slices/productsApiSlice';
 
-import './styles/ProductDetailsPage.css';
+import './styles/ProductDetailsPage.scss';
 
 function ProductDetailsPage() {
   const { id: productId } = useParams();

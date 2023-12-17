@@ -1,6 +1,12 @@
 .product-details-page {
     /*max-width: 1250px;*/
     margin: auto;
+
+    .products {
+        .container {
+            padding: 0 15px;
+        }
+    }
 }
 
 .product-info-details {
