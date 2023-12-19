@@ -177,3 +177,7 @@
     width: 546px;
     flex-shrink: 0;
 }
+
+.details-subheader {
+    font-weight: bold;
+}
