@@ -19,8 +19,8 @@ function Cart() {
     dispatch(removeFromCart(id));
   };
 
-  const handleQuantityChange = (id, itemQuantity) => {
-    dispatch(updateQuantity({ id, quantity: itemQuantity }));
+  const handleQuantityChange = (id, quantity) => {
+    dispatch(updateQuantity({ itemId: id, quantity }));
   };
 
   return (
