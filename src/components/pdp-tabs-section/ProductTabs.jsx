@@ -93,6 +93,27 @@ function ProductTabs({ productData }) {
               <h3>Product Details</h3>
             </div>
             <p>{productData.description}</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Est placerat in egestas erat imperdiet
+              sed euismod nisi. Tristique nulla aliquet enim tortor at auctor. Sit amet consectetur
+              adipiscing elit duis tristique sollicitudin. Dignissim sodales ut eu sem integer. Quam
+              adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Arcu cursus euismod
+              quis viverra nibh cras. Odio pellentesque diam volutpat commodo sed egestas egestas
+              fringilla. Sodales neque sodales ut etiam sit. Auctor augue mauris augue neque gravida
+              in fermentum et sollicitudin. Consectetur purus ut faucibus pulvinar elementum integer
+              enim neque. Mauris ultrices eros in cursus turpis massa tincidunt. Nibh nisl
+              condimentum id venenatis. Dui sapien eget mi proin sed libero enim sed faucibus.
+            </p>
+            <p>
+              <span className="details-subheader">Rise:</span> High Hip
+            </p>
+            <p>
+              <span className="details-subheader">Fit:</span> Fitted Leg
+            </p>
+            <p>
+              <span className="details-subheader">Fit:</span> Skinny
+            </p>
           </div>
         )}
 
