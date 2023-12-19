@@ -1,23 +1,24 @@
 import { Rate, Space } from 'antd';
 import './ProductInfo.css';
 import { shape } from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../slices/cartSlice';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
 import ProductAddToCart from '../pdp-add-to-cart/ProductAddToCart';
+import { useCart } from '../cartContext/CartContext';
 
 function ProductInfo({ productData }) {
+  const dispatch = useDispatch();
   const { title, rating, description, colors, sizes, price, discountedPrice, discount, thumb } =
     productData;
   const [color, setColor] = useState(colors[0]);
   const [size, setSize] = useState(sizes[0]);
   const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('userCart')) || []);
 
-  useEffect(() => {
-    localStorage.setItem('userCart', JSON.stringify(cart));
-  }, [cart]);
+  const { addToCart: addToCartContext } = useCart();
 
   const handleAddToCart = () => {
     const newItem = {
@@ -32,22 +33,8 @@ function ProductInfo({ productData }) {
       itemThumb: thumb,
     };
 
-    const existingItemIndex = cart.findIndex(
-      (item) =>
-        item.itemTitle === newItem.itemTitle &&
-        item.itemColor === newItem.itemColor &&
-        item.itemSize === newItem.itemSize,
-    );
-
-    if (existingItemIndex !== -1) {
-      const updatedCart = [...cart];
-      updatedCart[existingItemIndex].itemQuantity += quantity;
-      setCart(updatedCart);
-    } else {
-      setCart([...cart, newItem]);
-    }
-
-    console.log('User cart', cart);
+    addToCartContext(newItem);
+    dispatch(addToCart(newItem));
   };
 
   return (
