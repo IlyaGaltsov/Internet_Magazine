@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import Search from '../search/Search';
 import CartSvg from '../../assets/images/icons/cart.svg';
+import { useCart } from '../cartContext/CartContext';
 import './Header.css';
 
 function Header() {
+  const { getTotalItems } = useCart();
   return (
     <header className="header">
       <div className="container">
@@ -29,9 +31,12 @@ function Header() {
             <div className="header_nav-profile">
               <ul>
                 <li>
-                  <NavLink to="/cart">
-                    <img src={CartSvg} alt="Cart" />
-                  </NavLink>
+                  <div className="cart-icon">
+                    <NavLink to="/cart">
+                      <span className="cart-count">{getTotalItems()}</span>
+                      <img src={CartSvg} alt="Cart" />
+                    </NavLink>
+                  </div>
                 </li>
               </ul>
             </div>

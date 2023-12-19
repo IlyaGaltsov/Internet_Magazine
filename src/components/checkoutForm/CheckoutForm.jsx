@@ -37,7 +37,7 @@ function CheckoutForm({ onSubmit }) {
 
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
-      .matches(/^[a-zA-Z\s-]+$/, 'Invalid characters in Full Name')
+      .matches(/^[\p{L}\s-]+$/u, 'Invalid characters in Full Name')
       .required('Full Name is required'),
     city: Yup.string().required('City is required'),
     warehouse: Yup.string().required('Delivery Warehouse is required'),
