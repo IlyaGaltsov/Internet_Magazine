@@ -3,6 +3,7 @@ import ProductImages from '../components/pdp-images/ProductImages';
 import ProductInfo from '../components/pdp-info/ProductInfo';
 import ProductTabs from '../components/pdp-tabs-section/ProductTabs';
 import Products from '../components/products/Products';
+import BreadCrumbs from '../components/bread-crumbs/BreadCrumbs';
 import { shuffleArray } from './MainPage';
 import { useGetProductDetailsQuery, useGetTopSelleresQuery } from '../slices/productsApiSlice';
 
@@ -26,6 +27,9 @@ function ProductDetailsPage() {
         <div>{errorProduct.data.message || errorProduct.error}</div>
       ) : (
         <div className="product-details-page">
+          <div className="product-breadcrumbs">
+            <BreadCrumbs currentPage={product.title} />
+          </div>
           <div className="product-info-details">
             <ProductImages productImages={product.images} />
             <ProductInfo productData={product} />

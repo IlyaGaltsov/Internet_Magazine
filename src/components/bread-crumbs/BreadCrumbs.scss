@@ -1,0 +1,44 @@
+.breadcrumbs {
+  display: flex;
+
+
+  .breadcrumbs-item {
+    //display: flex;
+    //align-items: center;
+
+    position: relative;
+    margin-right: 30px;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:not(:last-child) {
+      a {
+        color: rgba(0, 0, 0, 0.60);
+      }
+
+      font-family: Satoshi;
+
+      &:hover {
+        text-decoration: underline grey;
+      }
+
+      img {
+        position: absolute;
+        right: -1.1rem;
+        bottom: 2px;
+      }
+
+      //&:after {
+      //  content: ">";
+      //  position: absolute;
+      //  right: -0.9rem;
+      //  bottom: 1px;
+      //  font-size: 16px;
+      //  color: rgba(0, 0, 0, 0.60);
+      //}
+    }
+  }
+}
