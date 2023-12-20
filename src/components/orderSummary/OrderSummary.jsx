@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { clearCart } from '../../slices/cartSlice';
 import CheckoutForm from '../checkoutForm/CheckoutForm';
 import './OrderSummary.css';
 
@@ -7,6 +9,7 @@ import promoCodeSvg from '../../assets/images/cart-images/promocode.svg';
 import checkoutSvg from '../../assets/images/cart-images/checkout.svg';
 
 function OrderSummary({ products }) {
+  const dispatch = useDispatch();
   const [promoCode, setPromoCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
   const [promoCodeError, setPromoCodeError] = useState('');
@@ -26,6 +29,7 @@ function OrderSummary({ products }) {
     } finally {
       formikProps.setSubmitting(false);
       setShowCheckoutForm(false);
+      dispatch(clearCart());
     }
   };
 
