@@ -52,8 +52,6 @@ function ProductInfo({ productData }) {
     } else {
       setCart([...cart, newItem]);
     }
-
-    console.log('User cart', cart);
   };
 
   return (

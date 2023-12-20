@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../../slices/cartSlice';
 import CartTitle from '../cartTitle/CartTitle';
@@ -6,10 +5,6 @@ import CartItem from '../cartItem/CartItem';
 import OrderSummary from '../orderSummary/OrderSummary';
 
 import './Cart.css';
-
-// import cartImg1 from '../../assets/images/cart-images/cart_img1.png';
-// import cartImg2 from '../../assets/images/cart-images/cart_img2.png';
-// import cartImg3 from '../../assets/images/cart-images/cart_img3.png';
 
 function Cart() {
   const products = useSelector((state) => state.cart.items);

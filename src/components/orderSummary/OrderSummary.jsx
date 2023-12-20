@@ -96,7 +96,12 @@ function OrderSummary({ products }) {
       ) : (
         <p>No products in the order.</p>
       )}
-      <button type="button" onClick={handleGoToCheckout} className="go-to-checkout-button">
+      <button
+        type="button"
+        onClick={handleGoToCheckout}
+        className="go-to-checkout-button"
+        disabled={products.length === 0}
+      >
         Go to Checkout
         <img src={checkoutSvg} alt="Go to Checkout" />
       </button>
