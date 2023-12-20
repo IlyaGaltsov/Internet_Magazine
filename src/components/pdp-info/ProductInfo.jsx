@@ -1,13 +1,14 @@
 import { Rate, Space } from 'antd';
 import './ProductInfo.css';
 import { shape } from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../slices/cartSlice';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
 import ProductAddToCart from '../pdp-add-to-cart/ProductAddToCart';
+// import {persistor} from "../../store/store";
 
 function ProductInfo({ productData }) {
   const { title, rating, description, colors, sizes, price, discountedPrice, discount, thumb } =
@@ -15,13 +16,14 @@ function ProductInfo({ productData }) {
   const [color, setColor] = useState(colors[0]);
   const [size, setSize] = useState(sizes[0]);
   const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('userCart')) || []);
+  // const [cart, setCart] = useState(JSON.parse(localStorage.getItem('userCart')) || []);
 
-  useEffect(() => {
-    localStorage.setItem('userCart', JSON.stringify(cart));
-  }, [cart]);
+  // useEffect(() => {
+  //   localStorage.setItem('userCart', JSON.stringify(cart));
+  // }, [cart]);
 
   const dispatch = useDispatch();
+  // const cart = useSelector((state) => state.cart.items);
 
   const handleAddToCart = () => {
     const newItem = {
@@ -37,21 +39,24 @@ function ProductInfo({ productData }) {
     };
 
     dispatch(addToCart(newItem));
+    // persistor.persist();
 
-    const existingItemIndex = cart.findIndex(
-      (item) =>
-        item.itemTitle === newItem.itemTitle &&
-        item.itemColor === newItem.itemColor &&
-        item.itemSize === newItem.itemSize,
-    );
-
-    if (existingItemIndex !== -1) {
-      const updatedCart = [...cart];
-      updatedCart[existingItemIndex].itemQuantity += quantity;
-      setCart(updatedCart);
-    } else {
-      setCart([...cart, newItem]);
-    }
+    // const existingItemIndex = cart.findIndex(
+    //   (item) =>
+    //     item.itemTitle === newItem.itemTitle &&
+    //     item.itemColor === newItem.itemColor &&
+    //     item.itemSize === newItem.itemSize,
+    // );
+    //
+    // if (existingItemIndex !== -1) {
+    //   const updatedCart = [...cart];
+    //   updatedCart[existingItemIndex].itemQuantity += quantity;
+    //   setCart(updatedCart);
+    //   dispatch(addToCart(updatedCart));
+    // } else {
+    //   setCart([...cart, newItem]);
+    //   dispatch(addToCart(newItem));
+    // }
   };
 
   return (

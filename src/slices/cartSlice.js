@@ -3,11 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 export const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    items: JSON.parse(localStorage.getItem('userCart')) || [],
+    items: [],
   },
   reducers: {
     addToCart: (state, action) => {
-      state.items.push(action.payload);
+      const newItem = action.payload;
+      const existingItemIndex = state.items.findIndex(
+        (item) =>
+          item.itemTitle === newItem.itemTitle &&
+          item.itemColor === newItem.itemColor &&
+          item.itemSize === newItem.itemSize,
+      );
+
+      if (existingItemIndex !== -1) {
+        state.items[existingItemIndex].itemQuantity += newItem.itemQuantity;
+      } else {
+        state.items.push(newItem);
+      }
     },
     updateQuantity: (state, action) => {
       const { itemId, quantity } = action.payload;
