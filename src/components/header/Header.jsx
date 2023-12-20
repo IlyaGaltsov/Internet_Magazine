@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Search from '../search/Search';
 import CartSvg from '../../assets/images/icons/cart.svg';
-import { useCart } from '../cartContext/CartContext';
+
 import './Header.css';
 
 function Header() {
-  const { getTotalItems } = useCart();
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartItemCount = cartItems.reduce((count, item) => count + item.itemQuantity, 0);
   return (
     <header className="header">
       <div className="container">
@@ -33,8 +35,8 @@ function Header() {
                 <li>
                   <div className="cart-icon">
                     <NavLink to="/cart">
-                      <span className="cart-count">{getTotalItems()}</span>
                       <img src={CartSvg} alt="Cart" />
+                      {cartItemCount > 0 && <span className="cart-counter">{cartItemCount}</span>}
                     </NavLink>
                   </div>
                 </li>

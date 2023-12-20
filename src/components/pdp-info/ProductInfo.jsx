@@ -2,6 +2,8 @@ import { Rate, Space } from 'antd';
 import './ProductInfo.css';
 import { shape } from 'prop-types';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../slices/cartSlice';
 import ProductColors from '../pdp-colors/ProductColors';
 import ProductSizes from '../pdp-sizes/ProductSizes';
 import ProductQuantity from '../pdp-quantity/ProductQuantity';
@@ -19,6 +21,8 @@ function ProductInfo({ productData }) {
     localStorage.setItem('userCart', JSON.stringify(cart));
   }, [cart]);
 
+  const dispatch = useDispatch();
+
   const handleAddToCart = () => {
     const newItem = {
       itemId: Date.now(),
@@ -31,6 +35,8 @@ function ProductInfo({ productData }) {
       itemDiscount: discount,
       itemThumb: thumb,
     };
+
+    dispatch(addToCart(newItem));
 
     const existingItemIndex = cart.findIndex(
       (item) =>
@@ -46,8 +52,6 @@ function ProductInfo({ productData }) {
     } else {
       setCart([...cart, newItem]);
     }
-
-    console.log('User cart', cart);
   };
 
   return (
