@@ -36,8 +36,8 @@ function ClothPage() {
       try {
         const response = await axios.get('http://localhost:5001/api/casualProduct');
         setCasualProducts(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+      } catch {
+        <p>Error</p>;
       }
     };
 
@@ -113,7 +113,6 @@ function ClothPage() {
               .slice(0, visibleProducts),
             sortOption,
           ).map((product) => {
-            console.log(product);
             const { id, title, price, thumbnail, rating, ratingStars } = product;
             return (
               <Link to={`/product/${id}`} key={id} className="cloth_card_link">
