@@ -18,7 +18,12 @@ const store = configureStore({
     [apiSlice.reducerPath]: apiSlice.reducer,
     cart: persistedReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['persist/PERSIST'], // ignore PERSIST action
+      },
+    }).concat(apiSlice.middleware),
   devTools: true,
 });
 
