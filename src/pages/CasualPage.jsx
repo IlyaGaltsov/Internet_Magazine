@@ -1,4 +1,4 @@
-import Filter from '../components/filter/Filter';
+// import Filter from '../components/filter/Filter';
 import ClothPage from '../components/clothPage/ClothPage';
 import './styles/ClothPage.css';
 
@@ -7,9 +7,9 @@ function CasualPage() {
     <div>
       <div className="container">
         <div className="cloth_page">
-          <div className="filter_on_page">
-            <Filter />
-          </div>
+          {/* <div className="filter_on_page"> */}
+          {/* <Filter /> */}
+          {/* </div> */}
           <ClothPage />
         </div>
       </div>

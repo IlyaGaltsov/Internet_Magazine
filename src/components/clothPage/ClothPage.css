@@ -1,64 +1,120 @@
-.cloth_heder{
+.cloth_page {
     display: flex;
-}
-.cloth_heder h3{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cloth_heder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .cloth_heder h3 {
     font-size: 27px;
     font-weight: 800;
-}
-.section_filter{
-    margin: 0 0 0 428px;
+  }
+  
+  .section_filter {
     display: flex;
     text-align: center;
     align-items: center;
-}
-.section_filter p{
+  }
+  
+  .section_filter p {
     font-size: 16px;
     color: grey;
-}
-select[name="section_tab"]{
+    margin-right: 10px;
+  }
+  
+  select[name="section_tab"] {
     font-size: 14px;
     font-weight: bold;
-    margin: 0 0 10px 0; /* Убираем внутренние отступы, если они есть */
-}
-select[name="section_tab"] option {
+    margin: 0 0 10px 0;
+  }
+  
+  select[name="section_tab"] option {
     font-size: 14px;
     font-weight: bold;
-    margin: 0; /* Убираем внутренние отступы, если они есть */
-}
-.cloth_item{
+    margin: 0;
+  }
+  
+  .cloth_block {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .filter {
+    width: 300px;
+    margin-right: 20px; /* Отступ между блоками с фильтрами и карточками */
+  }
+  
+  .cloth_item {
+    flex: 1;
     width: 945px;
     display: flex;
     flex-wrap: wrap;
-}
-.cloth_card{
-    margin: 0 20px 36px 0;
-}
-.cloth_card p{
+  }
+  
+  .cloth_card {
+    width: 250px;
+    height: 500px;
+    margin: 0 20px 20px 0;
+  }
+  
+  .cloth_card p {
     font-size: 18px;
     font-weight: 800;
-}
-.cloth_card p:last-child{
+  }
+  
+  .cloth_card p:last-child {
     font-size: 20px;
     font-weight: 800;
-}
-.raiting{
+  }
+  
+  .raiting {
     display: flex;
     margin: 0 0 12px 0;
-}
-.raiting img{
-    margin: 6px 0 0 0 ;
+  }
+  
+  .raiting img {
+    margin: 6px 0 0 0;
     width: 20px;
     height: 20px;
     padding: 0 0 0 2px;
-}
-.raiting p{
+  }
+  
+  .raiting p:first-child {
+    font-size: 26px;
+    color: yellow;
+  }
+  
+  .raiting p:last-child {
     padding: 5px 0 0 15px;
-}
-.more{
-    margin-left: 400px;
-}
-.load_more_btn{
+  }
+  
+  .more {
+    margin-top: 20px; /* Отступ между блоком с карточками и кнопкой */
+    align-self: center; /* Центрирование кнопки под блоком с карточками */
+  }
+  
+  .load_more_btn {
     font-size: 18px;
     font-weight: 800;
-    color:gray;
-}
+    color: gray;
+    width: 150px; /* Ширина кнопки */
+    height: 40px; /* Высота кнопки */
+    border: 2px solid gray; /* Граница кнопки */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer;
+  }
+  
+  /* При наведении на кнопку */
+  .load_more_btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
