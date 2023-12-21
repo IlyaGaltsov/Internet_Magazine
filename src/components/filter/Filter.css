@@ -184,3 +184,27 @@ input.black {
   margin: 30px 0 0 0;
   margin-left: -5px;
 }
+.color_filter{
+  font-size: 26px;
+  color: black;
+  font-weight: 800;
+  padding: 20px 0;
+}
+.size_filter{
+  font-size: 26px;
+  color: black;
+  font-weight: 800;
+  padding: 20px 0;
+}
+.price_filter{
+  font-size: 26px;
+  color: black;
+  font-weight: 800;
+  padding: 20px 0;
+}
+.gender_filter{
+  font-size: 26px;
+  color: black;
+  font-weight: 800;
+  padding: 20px 0;
+}

@@ -100,6 +100,7 @@ function Filter({ onApplyFilter }) {
                 onChange={() => handleCheckboxChange('hoodie')}
               />
             </label>
+            <p className="color_filter">Color</p>
             <label className="label_for_filters">
               Green
               <input
@@ -180,6 +181,7 @@ function Filter({ onApplyFilter }) {
                 onChange={() => handleCheckboxChange('black')}
               />
             </label>
+            <p className="size_filter">Size</p>
             <label className="label_for_filters">
               XX-Small
               <input
@@ -252,6 +254,7 @@ function Filter({ onApplyFilter }) {
                 onChange={() => handleCheckboxChange('medium')}
               />
             </label>
+            <p className="price_filter">Price</p>
             <label className="label_for_filters">
               Price from 80$ to 120$
               <input
@@ -276,6 +279,7 @@ function Filter({ onApplyFilter }) {
                 onChange={() => handleCheckboxChange('price3')}
               />
             </label>
+            <p className="gender_filter">Gender</p>
             <label className="label_for_filters">
               Male
               <input

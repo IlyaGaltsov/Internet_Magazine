@@ -2,7 +2,7 @@ import './ClothPage.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Filter from '../filter/Filter'; // Добавил импорт компонента Filter
+import Filter from '../filter/Filter';
 
 function ClothPage() {
   const location = useLocation();
@@ -88,11 +88,11 @@ function ClothPage() {
             casualProducts
               .filter(
                 (casualProduct) =>
-                  (!selectedFilters.tShirt || casualProduct.cloth === 'T-shirt') &&
-                  (!selectedFilters.jeans || casualProduct.cloth === 'Jeans') &&
-                  (!selectedFilters.shorts || casualProduct.cloth === 'Shorts') &&
-                  (!selectedFilters.shirts || casualProduct.cloth === 'Shirts') &&
-                  (!selectedFilters.hoodie || casualProduct.cloth === 'Hoodie') &&
+                  (!selectedFilters.tShirt || casualProduct.cloth === 'tshirt') &&
+                  (!selectedFilters.jeans || casualProduct.cloth === 'jeans') &&
+                  (!selectedFilters.shorts || casualProduct.cloth === 'shorts') &&
+                  (!selectedFilters.shirts || casualProduct.cloth === 'shirts') &&
+                  (!selectedFilters.hoodie || casualProduct.cloth === 'hoodie') &&
                   (!selectedFilters.green || casualProduct.color === 'green') &&
                   (!selectedFilters.red || casualProduct.color === 'red') &&
                   (!selectedFilters.yellow || casualProduct.color === 'yellow') &&
@@ -103,29 +103,32 @@ function ClothPage() {
                   (!selectedFilters.pink || casualProduct.color === 'pink') &&
                   (!selectedFilters.white || casualProduct.color === 'white') &&
                   (!selectedFilters.black || casualProduct.color === 'black') &&
-                  (!selectedFilters.xxSmall || casualProduct.size === 'XX-Small') &&
-                  (!selectedFilters.xSmall || casualProduct.size === 'X-Small') &&
-                  (!selectedFilters.small || casualProduct.size === 'Small') &&
-                  (!selectedFilters.xLarge || casualProduct.size === 'X-Large') &&
-                  (!selectedFilters.xxLarge || casualProduct.size === 'XX-Large') &&
-                  (!selectedFilters.large || casualProduct.size === 'Large'),
-                  // ... (добавьте остальные фильтры)
+                  (!selectedFilters.xxSmall || casualProduct.size === 'xxsmall') &&
+                  (!selectedFilters.xSmall || casualProduct.size === 'xsmall') &&
+                  (!selectedFilters.small || casualProduct.size === 'small') &&
+                  (!selectedFilters.xLarge || casualProduct.size === 'slarge') &&
+                  (!selectedFilters.xxLarge || casualProduct.size === 'xxlarge') &&
+                  (!selectedFilters.large || casualProduct.size === 'large'),
               )
               .slice(0, visibleProducts),
             sortOption,
-          ).map(({ id, title, price, thumbnail, rating, ratingStars }) => (
-            <Link to={`/product/${id}`} key={id} className="cloth_card_link">
-              <div className="cloth_card" key={id}>
-                <img src={thumbnail} alt={title} />
-                <p>{title}</p>
-                <div className="raiting">
-                  <p>{ratingStars}</p>
-                  <p>{`${rating}/5`}</p>
+          ).map((product) => {
+            console.log(product);
+            const { id, title, price, thumbnail, rating, ratingStars } = product;
+            return (
+              <Link to={`/product/${id}`} key={id} className="cloth_card_link">
+                <div className="cloth_card" key={id}>
+                  <img src={thumbnail} alt={title} />
+                  <p>{title}</p>
+                  <div className="raiting">
+                    <p>{ratingStars}</p>
+                    <p>{`${rating}/5`}</p>
+                  </div>
+                  <p>{`${price}$`}</p>
                 </div>
-                <p>{`${price}$`}</p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
         ;
       </div>
