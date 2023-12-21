@@ -8,7 +8,11 @@ import './CartItem.css';
 function CartItem({ id, name, image, size, color, price, quantity, onQuantityChange, onDelete }) {
   return (
     <div className="cart-item">
-      <img src={image} alt={`Product ${id}`} className="cart-item-image" />
+      <img
+        src={`/assets/images/products/${image}.png`}
+        alt={`Product ${id}`}
+        className="cart-item-image"
+      />
       <div className="cart-item-info column-align">
         <p className="name">{name}</p>
         <p>Size: {size}</p>
