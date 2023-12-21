@@ -287,5 +287,187 @@
       "rating": 5,
       "quote": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”"
     }
+  ],
+  "casualProduct": [
+    {
+      "id": 1,
+      "title": "Skinny jeans",
+      "thumbnail": "https://intertop.ua/load/TH7264/412x550/95.jpg",
+      "price": 110,
+      "rating": 4,
+      "ratingStars": "★★★★☆",
+      "cloth": "jeans",
+      "color": "black",
+      "size": "medium",
+      "sex": "male"
+    },
+    {
+      "id": 2,
+      "title": "Bezlad",
+      "thumbnail": "https://intertop.ua/load/tshirtbasicblue/412x550/MAIN.png",
+      "price": 80,
+      "rating": 3,
+      "ratingStars": "★★★☆☆",
+      "cloth": "tshirt",
+      "color": "blue",
+      "size": "large",
+      "sex": "female"
+    },
+    {
+      "id": 3,
+      "title": "Hoodie PUMA",
+      "thumbnail": "https://intertop.ua/load/622671_01/412x550/MAIN.jpeg",
+      "price": 130,
+      "rating": 4.2,
+      "ratingStars": "★★★★☆",
+      "cloth": "hoodie",
+      "color": "black",
+      "size": "xlarge",
+      "sex": "male"
+    },
+    {
+      "id": 4,
+      "title": "PUMA Shorts",
+      "thumbnail": "https://intertop.ua/load/524379_44/412x550/MAIN.jpeg",
+      "price": 100,
+      "rating": 4.0,
+      "ratingStars": "★★★★☆",
+      "cloth": "Short",
+      "color": "green",
+      "size": "xxlarge",
+      "sex": "male"
+    },
+    {
+      "id": 5,
+      "title": "Cesual Shirt",
+      "thumbnail": "https://content1.rozetka.com.ua/goods/images/big/318941361.jpg",
+      "price": 90,
+      "rating": 4.8,
+      "ratingStars": "★★★★★",
+      "cloth": "shirt",
+      "color": "white",
+      "size": "large",
+      "sex": "male"
+    },
+    {
+      "id": 6,
+      "title": "Mustang Jeans",
+      "thumbnail": "https://intertop.ua/load/1008860/412x550/2.jpeg",
+      "price": 135,
+      "rating": 4.6,
+      "ratingStars": "★★★★☆",
+      "cloth": "jeans",
+      "color": "red",
+      "size": "medium",
+      "sex": "female"
+    },
+    {
+      "id": 7,
+      "title": "Puma Hoodie",
+      "thumbnail": "https://intertop.ua/load/587031_63/412x550/MAIN.jpeg",
+      "price": 160,
+      "rating": 4.0,
+      "ratingStars": "★★★★☆",
+      "cloth": "hoodie",
+      "color": "pink",
+      "size": "xlarge",
+      "sex": "female"
+    },
+    {
+      "id": 8,
+      "title": "Champion CREWNECK",
+      "thumbnail": "https://intertop.ua/load/CML109/412x550/MAIN.jpg",
+      "price": 90,
+      "rating": 4.5,
+      "ratingStars": "★★★★☆",
+      "cloth": "tshirt",
+      "color": "red",
+      "size": "medium",
+      "sex": "male"
+    },
+    {
+      "id": 9,
+      "title": "PUMA First Mile",
+      "thumbnail": "https://intertop.ua/load/523031_79/412x550/MAIN.jpeg",
+      "price": 170,
+      "rating": 4.7,
+      "ratingStars": "★★★★★",
+      "cloth": "short",
+      "color": "white",
+      "size": "large",
+      "sex": "male"
+    },
+    {
+      "id": 10,
+      "title": "PUMA Inland",
+      "thumbnail": "https://intertop.ua/load/535812_74/412x550/MAIN.jpeg",
+      "price": 120,
+      "rating": 4.3,
+      "ratingStars": "★★★★☆",
+      "cloth": "shirt",
+      "color": "yellow",
+      "size": "medium",
+      "sex": "female"
+    },
+    {
+      "id": 11,
+      "title": "PUMA classic",
+      "thumbnail": "https://intertop.ua/load/625218_44/412x550/MAIN.jpeg",
+      "price": 115,
+      "rating": 4.9,
+      "ratingStars": "★★★★★",
+      "cloth": "hoodie",
+      "color": "green",
+      "size": "xlarge",
+      "sex": "male"
+    },
+    {
+      "id": 12,
+      "title": "Mustang Skinny",
+      "thumbnail": "https://intertop.ua/load/4014467/412x550/3.jpeg",
+      "price": 190,
+      "rating": 4.6,
+      "ratingStars": "★★★★☆",
+      "cloth": "jeans",
+      "color": "blue",
+      "size": "large",
+      "sex": "male"
+    },
+    {
+      "id": 13,
+      "title": "Berserk Sport",
+      "thumbnail": "https://intertop.ua/load/BoxingRedSHRT/412x550/MAIN.jpeg",
+      "price": 125,
+      "rating": 4.4,
+      "ratingStars": "★★★★☆",
+      "cloth": "short",
+      "color": "red",
+      "size": "medium",
+      "sex": "male"
+    },
+    {
+      "id": 14,
+      "title": "Jack Wolfskin",
+      "thumbnail": "https://intertop.ua/load/4X2079/412x550/95.jpg",
+      "price": 190,
+      "rating": 4.0,
+      "ratingStars": "★★★★☆",
+      "cloth": "shirt",
+      "color": "darkblue",
+      "size": "xlarge",
+      "sex": "male"
+    },
+    {
+      "id": 15,
+      "title": "Reebok Identity",
+      "thumbnail": "https://intertop.ua/load/0B873/412x550/91.jpg",
+      "price": 122,
+      "rating": 4.2,
+      "ratingStars": "★★★★☆",
+      "cloth": "tshirt",
+      "color": "white",
+      "size": "large",
+      "sex": "female"
+    }
   ]
 }
