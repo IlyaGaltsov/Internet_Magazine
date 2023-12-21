@@ -28,7 +28,7 @@ function ProductsPage() {
   const { data: products, isLoading, error } = useGetFilteredProductsQuery(queryString);
 
   const getTitle = () => {
-    const brand = filterParams.brand ? [...filterParams.brand][0] : null;
+    const brand = filterParams.brands ? [...filterParams.brands][0] : null;
     const isSale = filterParams.isSale ? [...filterParams.isSale][0] : null;
     const isNew = filterParams.isNew ? [...filterParams.isNew][0] : null;
 
